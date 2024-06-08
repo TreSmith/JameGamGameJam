@@ -18,7 +18,7 @@ collision_layer = 2
 position = Vector2(574.5, 221.5)
 shape = SubResource("RectangleShape2D_b5ype")
 
-[node name="UI_Layer" type="CanvasLayer" parent="."]
+[node name="UI_Layer" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = -1
 
 [node name="Background" type="TextureRect" parent="UI_Layer"]
@@ -44,6 +44,7 @@ offset_top = -120.0
 offset_right = 400.0
 grow_horizontal = 2
 grow_vertical = 0
+alignment = 1
 
 [node name="Card" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
 layout_mode = 2

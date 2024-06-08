@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://cwvokrs86ax4x"]
+
+[ext_resource type="Script" path="res://Scripts/UI/Notoriety.gd" id="1_5vr55"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pnh4"]
+bg_color = Color(0.286275, 0.0941176, 0.12549, 0.482353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsgh0"]
+bg_color = Color(0.192157, 0.490196, 0.262745, 1)
+
+[node name="Notoriety" type="Panel"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = -72.0
+offset_bottom = 100.0
+grow_horizontal = 2
+script = ExtResource("1_5vr55")
+
+[node name="NotorietyBar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -15.0
+offset_right = -7.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3pnh4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vsgh0")
+show_percentage = false
+
+[node name="NotorietyLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 26.0
+offset_right = 51.0
+offset_bottom = 49.0
+text = "Notoriety Required: 0"

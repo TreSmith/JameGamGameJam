@@ -19,6 +19,9 @@ func restart():
 	get_tree().change_scene_to_file(title_scene)
 
 func next_level():
+	GameManager.Current_BAC = GameManager.STARTING_BAC
+	GameManager.Current_Fortitude = GameManager.STARTING_FORTITUDE
+	GameManager.Current_Notoriety = 0
 	if current_scene_type != SceneType.Level && current_level <= num_levels:
 		current_level += 1
 		current_scene_type = SceneType.Level

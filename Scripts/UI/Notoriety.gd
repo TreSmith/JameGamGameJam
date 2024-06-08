@@ -3,14 +3,15 @@ extends Panel
 @onready var notoriety_bar = $NotorietyBar
 @onready var notoriety_label = $NotorietyLabel
 
-var requiredNotoriety = 0
+var required_notoriety = 0
 
 func fillLabels(requirements):
-	requiredNotoriety = requirements
+	print("Requirements: " + str(requirements))
+	required_notoriety = requirements
 	notoriety_bar.value = 0
-	notoriety_label.text = "Required Notoriety: " + str(requiredNotoriety)
+	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)
 
 func update_notoriety_ui(notoriety):
-	notoriety_bar.value += notoriety
-	notoriety_label.text = "Required Notoriety: " + str(notoriety_bar.value)
-
+	notoriety_bar.value = GameManager.Current_Notoriety
+	required_notoriety - GameManager.Current_Notoriety
+	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)

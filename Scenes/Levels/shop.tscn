@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://cyyk64t77bkhr"]
 
-[ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_g8vmq"]
 [ext_resource type="Texture2D" uid="uid://caec80768mumv" path="res://Assets/Backgrounds/Shop.jpg" id="1_k8gka"]
+[ext_resource type="Script" path="res://Scripts/Component Scripts/shop.gd" id="1_wbwhc"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_1sknc"]
 
 [node name="shop" type="Node2D"]
-script = ExtResource("1_g8vmq")
+script = ExtResource("1_wbwhc")
 
 [node name="Background" type="CanvasLayer" parent="."]
 

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_pyrow"]
 [ext_resource type="Texture2D" uid="uid://bm1ygorpkugxo" path="res://Assets/Backgrounds/Level3.jpg" id="1_rrwl0"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_aiwgx"]
-[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_np0ak"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/hand.tscn" id="4_np0ak"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a146"]
 size = Vector2(1147, 449)

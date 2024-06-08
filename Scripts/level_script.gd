@@ -10,7 +10,7 @@ var current_notoriety = 0
 @onready var notoriety = %Notoriety
 
 func _ready():
-	notoriety.fillLabels()
+	notoriety.fillLabels(requiredNotoriety)
 
 func _on_next_level_next_level():
 	SceneManager.next_level()
@@ -19,6 +19,6 @@ func _on_next_level_next_level():
 #remove fortitude, check if fortitude matches current BAC, update progress bars, deal new hand
 func _on_next_level_end_turn():
 	current_fortitude_loss += fortitude_loss_per_turn
-	
+	notoriety.update_notoriety_ui(current_notoriety)
 	player_bars.update_bac(1)
 	player_bars.update_fort(current_fortitude_loss)

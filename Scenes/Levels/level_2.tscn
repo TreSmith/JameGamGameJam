@@ -1,0 +1,18 @@
+[gd_scene load_steps=2 format=3 uid="uid://sk06dailw4rp"]
+
+[ext_resource type="Texture2D" uid="uid://dt3smeuvoydug" path="res://Assets/Backgrounds/Level2.jpg" id="1_n2d4i"]
+
+[node name="level_2" type="Node2D"]
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -45.0
+offset_top = -72.0
+offset_right = 1208.0
+offset_bottom = 763.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_n2d4i")
+expand_mode = 3

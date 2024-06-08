@@ -46,6 +46,4 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5sgxa")
 
-[node name="ChooseName" type="Node" parent="."]
-
 [connection signal="pressed" from="Initial/StartGame" to="." method="_on_button_pressed"]

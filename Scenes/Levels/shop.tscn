@@ -1,18 +1,24 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyyk64t77bkhr"]
+[gd_scene load_steps=4 format=3 uid="uid://cyyk64t77bkhr"]
 
+[ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_g8vmq"]
 [ext_resource type="Texture2D" uid="uid://caec80768mumv" path="res://Assets/Backgrounds/Shop.jpg" id="1_k8gka"]
+[ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_1sknc"]
 
 [node name="shop" type="Node2D"]
+script = ExtResource("1_g8vmq")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="CanvasLayer" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="Background"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -8.0
-offset_top = -138.0
-offset_right = 1178.0
-offset_bottom = 656.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_k8gka")
-expand_mode = 3
+expand_mode = 5
+stretch_mode = 5
+
+[node name="NextLevel" parent="Background" instance=ExtResource("3_1sknc")]
+
+[connection signal="next_level" from="Background/NextLevel" to="." method="_on_next_level_next_level"]

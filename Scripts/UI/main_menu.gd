@@ -1,4 +1,7 @@
 extends Node
 
+#handle start game
 func _on_button_pressed():
-	pass # Replace with function body.
+	print("Button Pressed")
+	SceneManager.next_level()
+

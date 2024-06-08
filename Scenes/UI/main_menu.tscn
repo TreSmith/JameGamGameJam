@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx3ofyjcj7wxb"]
+
+[ext_resource type="Texture2D" uid="uid://crucwie1hatfq" path="res://Assets/Backgrounds/main_menu.jpg" id="1_ohcko"]
+[ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_vuw2v"]
+[ext_resource type="Texture2D" uid="uid://7gyfoov0dcey" path="res://Assets/TitleCard.png" id="2_5sgxa"]
+
+[node name="MainMenu" type="Node"]
+script = ExtResource("1_vuw2v")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ohcko")
+expand_mode = 3
+
+[node name="Button" type="Button" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.0
+offset_top = 74.0
+offset_right = 86.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "START GAME"
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -365.5
+offset_top = -34.0
+offset_right = 365.5
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_5sgxa")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -1,13 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://sk06dailw4rp"]
+[gd_scene load_steps=6 format=3 uid="uid://sk06dailw4rp"]
 
 [ext_resource type="Texture2D" uid="uid://dt3smeuvoydug" path="res://Assets/Backgrounds/Level2.jpg" id="1_n2d4i"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_on5jf"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_gtfh0"]
+[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_pb1wq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6bjm"]
+size = Vector2(1147, 449)
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_on5jf")
 
-[node name="UI_Layer" type="CanvasLayer" parent="."]
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(574.5, 221.5)
+shape = SubResource("RectangleShape2D_v6bjm")
+
+[node name="UI_Layer" type="CanvasLayer" parent="." groups=["ui_layer"]]
+layer = -1
 
 [node name="Background" type="TextureRect" parent="UI_Layer"]
 anchors_preset = 15
@@ -27,5 +39,7 @@ offset_right = 0.0
 offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Hand" parent="UI_Layer" instance=ExtResource("4_pb1wq")]
 
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

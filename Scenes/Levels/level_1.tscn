@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bd53a7xjwuleu" path="res://Assets/Backgrounds/Level1.jpg" id="1_j2ew7"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_n3ubw"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_v7kdf"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/card.tscn" id="4_avinl"]
+[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_p4c6k"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
 size = Vector2(1147, 449)
@@ -40,32 +40,6 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Hand" type="HBoxContainer" parent="UI_Layer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -120.0
-offset_right = 400.0
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="Card" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
-layout_mode = 2
-
-[node name="Card2" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
-layout_mode = 2
-
-[node name="Card3" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
-layout_mode = 2
-
-[node name="Card4" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
-layout_mode = 2
-
-[node name="Card5" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
-layout_mode = 2
+[node name="Hand" parent="UI_Layer" instance=ExtResource("4_p4c6k")]
 
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

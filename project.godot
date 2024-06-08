@@ -15,6 +15,11 @@ run/main_scene="res://Scenes/UI/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Mobile")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://Scripts/ManagerScripts/game_manager.gd"
+SceneManager="*res://Scripts/ManagerScripts/scene_manager.gd"
+
 [display]
 
 window/stretch/mode="canvas_items"

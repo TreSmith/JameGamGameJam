@@ -1,12 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://3m8fja3p3ixi"]
+[gd_scene load_steps=10 format=3 uid="uid://3m8fja3p3ixi"]
 
 [ext_resource type="Texture2D" uid="uid://bd53a7xjwuleu" path="res://Assets/Backgrounds/Level1.jpg" id="1_j2ew7"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_n3ubw"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_v7kdf"]
 [ext_resource type="PackedScene" path="res://Scenes/Components/card.tscn" id="4_avinl"]
+[ext_resource type="PackedScene" uid="uid://borgwftef6nl5" path="res://Scenes/UI/player_bars.tscn" id="5_csc8m"]
+[ext_resource type="Script" path="res://Scripts/UI/Notoriety.gd" id="6_w0iq5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
 size = Vector2(1147, 449)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pnh4"]
+bg_color = Color(0.286275, 0.0941176, 0.12549, 0.482353)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vsgh0"]
+bg_color = Color(0.192157, 0.490196, 0.262745, 1)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_n3ubw")
@@ -67,4 +75,43 @@ layout_mode = 2
 [node name="Card5" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
 layout_mode = 2
 
+[node name="PlayerBars" parent="UI_Layer" instance=ExtResource("5_csc8m")]
+unique_name_in_owner = true
+
+[node name="Notoriety" type="Panel" parent="UI_Layer"]
+unique_name_in_owner = true
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 130.0
+offset_top = 50.0
+offset_right = -72.0
+offset_bottom = 100.0
+grow_horizontal = 2
+script = ExtResource("6_w0iq5")
+
+[node name="NotorietyBar" type="ProgressBar" parent="UI_Layer/Notoriety"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 8.0
+offset_top = -15.0
+offset_right = -7.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_3pnh4")
+theme_override_styles/fill = SubResource("StyleBoxFlat_vsgh0")
+show_percentage = false
+
+[node name="NotorietyLabel" type="Label" parent="UI_Layer/Notoriety"]
+layout_mode = 0
+offset_left = 11.0
+offset_top = 26.0
+offset_right = 51.0
+offset_bottom = 49.0
+text = "Notoriety Required: 0"
+
+[connection signal="end_turn" from="UI_Layer/NextLevel" to="." method="_on_next_level_end_turn"]
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

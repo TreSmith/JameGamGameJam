@@ -1,0 +1,72 @@
+[gd_scene load_steps=5 format=3 uid="uid://borgwftef6nl5"]
+
+[ext_resource type="Script" path="res://Scripts/UI/PlayerBars.gd" id="1_8bcje"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6b85"]
+bg_color = Color(0, 0, 0, 0.533333)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egptr"]
+bg_color = Color(0.698039, 0, 0.172549, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jc4ly"]
+bg_color = Color(0, 0.423529, 0.231373, 1)
+
+[node name="PlayerBars" type="Panel"]
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 130.0
+grow_vertical = 2
+script = ExtResource("1_8bcje")
+
+[node name="BAC_Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -274.0
+offset_right = 75.0
+offset_bottom = 226.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_w6b85")
+theme_override_styles/fill = SubResource("StyleBoxFlat_egptr")
+step = 1.0
+value = 20.0
+fill_mode = 3
+show_percentage = false
+
+[node name="FORT_Bar" type="ProgressBar" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 50.0
+offset_top = -274.0
+offset_right = 75.0
+offset_bottom = 226.0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/fill = SubResource("StyleBoxFlat_jc4ly")
+step = 1.0
+value = 13.0
+fill_mode = 2
+show_percentage = false
+
+[node name="BAC_Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 561.0
+offset_right = 87.0
+offset_bottom = 584.0
+text = "BAC: 0"
+
+[node name="FORT_Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 38.0
+offset_top = 594.0
+offset_right = 115.0
+offset_bottom = 617.0
+text = "FORT: 100"

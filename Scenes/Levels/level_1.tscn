@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://3m8fja3p3ixi"]
+[gd_scene load_steps=6 format=3 uid="uid://3m8fja3p3ixi"]
 
 [ext_resource type="Texture2D" uid="uid://bd53a7xjwuleu" path="res://Assets/Backgrounds/Level1.jpg" id="1_j2ew7"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_n3ubw"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_v7kdf"]
+[ext_resource type="PackedScene" uid="uid://dajxjx2fy2sfo" path="res://Scenes/Components/card.tscn" id="4_avinl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
+size = Vector2(1147, 449)
 
 [node name="Level_1" type="Node2D"]
 script = ExtResource("1_n3ubw")
 
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(574.5, 221.5)
+shape = SubResource("RectangleShape2D_b5ype")
+
 [node name="UI_Layer" type="CanvasLayer" parent="."]
-layer = 0
+layer = -1
 
 [node name="Background" type="TextureRect" parent="UI_Layer"]
 anchors_preset = 15
@@ -21,5 +32,32 @@ expand_mode = 3
 stretch_mode = 6
 
 [node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_v7kdf")]
+
+[node name="Hand" type="HBoxContainer" parent="UI_Layer"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -400.0
+offset_top = -120.0
+offset_right = 400.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Card" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
+layout_mode = 2
+
+[node name="Card2" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
+layout_mode = 2
+
+[node name="Card3" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
+layout_mode = 2
+
+[node name="Card4" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
+layout_mode = 2
+
+[node name="Card5" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
+layout_mode = 2
 
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

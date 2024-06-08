@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bd53a7xjwuleu" path="res://Assets/Backgrounds/Level1.jpg" id="1_j2ew7"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_n3ubw"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_v7kdf"]
+[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_p4c6k"]
 [ext_resource type="PackedScene" path="res://Scenes/Components/card.tscn" id="4_avinl"]
 [ext_resource type="PackedScene" uid="uid://borgwftef6nl5" path="res://Scenes/UI/player_bars.tscn" id="5_csc8m"]
 [ext_resource type="Script" path="res://Scripts/UI/Notoriety.gd" id="6_w0iq5"]
@@ -26,7 +27,7 @@ collision_layer = 2
 position = Vector2(574.5, 221.5)
 shape = SubResource("RectangleShape2D_b5ype")
 
-[node name="UI_Layer" type="CanvasLayer" parent="."]
+[node name="UI_Layer" type="CanvasLayer" parent="." groups=["ui_layer"]]
 layer = -1
 
 [node name="Background" type="TextureRect" parent="UI_Layer"]
@@ -48,17 +49,7 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Hand" type="HBoxContainer" parent="UI_Layer"]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -400.0
-offset_top = -120.0
-offset_right = 400.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="Hand" parent="UI_Layer" instance=ExtResource("4_p4c6k")]
 
 [node name="Card" parent="UI_Layer/Hand" instance=ExtResource("4_avinl")]
 layout_mode = 2

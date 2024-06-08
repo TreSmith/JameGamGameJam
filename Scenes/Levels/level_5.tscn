@@ -1,15 +1,27 @@
-[gd_scene load_steps=4 format=3 uid="uid://b260heag1djpo"]
+[gd_scene load_steps=6 format=3 uid="uid://b260heag1djpo"]
 
 [ext_resource type="Texture2D" uid="uid://cac7gk12y0coj" path="res://Assets/Backgrounds/Level5.jpg" id="1_7tv0g"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_eglit"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_qc7gi"]
+[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_p7vef"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gtltk"]
+size = Vector2(1147, 449)
 
 [node name="level_5" type="Node2D"]
 script = ExtResource("1_eglit")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CardDropArea" type="Area2D" parent="."]
+collision_layer = 2
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CardDropArea"]
+position = Vector2(574.5, 221.5)
+shape = SubResource("RectangleShape2D_gtltk")
+
+[node name="UI_Layer" type="CanvasLayer" parent="." groups=["ui_layer"]]
+layer = -1
+
+[node name="Background" type="TextureRect" parent="UI_Layer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,7 +31,7 @@ texture = ExtResource("1_7tv0g")
 expand_mode = 3
 stretch_mode = 6
 
-[node name="NextLevel" parent="CanvasLayer" instance=ExtResource("3_qc7gi")]
+[node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_qc7gi")]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -28,4 +40,6 @@ offset_bottom = 0.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[connection signal="next_level" from="CanvasLayer/NextLevel" to="." method="_on_next_level_next_level"]
+[node name="Hand" parent="UI_Layer" instance=ExtResource("4_p7vef")]
+
+[connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

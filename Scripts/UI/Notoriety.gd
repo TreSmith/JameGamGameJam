@@ -5,8 +5,10 @@ extends Panel
 
 var required_notoriety = 0
 
+
 func add_requirements(requirements):
 	required_notoriety = requirements
+	notoriety_bar.max_value = required_notoriety
 	update_notoriety_ui()
 
 func update_notoriety_ui():

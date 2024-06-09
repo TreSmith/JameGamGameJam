@@ -18,7 +18,7 @@ signal money_update
 @onready var energylabel = $Energy
 @onready var retainlabel = $Retain
 @onready var fortitude = $Fortitude
-
+@onready var cost_area = $CostArea
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -29,12 +29,7 @@ func _ready():
 	energylabel.text = (energylabel.text + str(energy))
 	retainlabel.text = (retainlabel.text + str(retain))
 	fortitude.text = (fortitude.text + str(fort))
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
+	cost_area.visible = false
 
 func _on_button_pressed():
 	if (GameManager.Current_Money >= 10):
@@ -46,3 +41,11 @@ func _on_button_pressed():
 		await tw.finished
 		money_update.emit()
 		queue_free()
+
+func _on_button_mouse_entered():
+	cost_area.visible = true
+
+
+
+func _on_button_mouse_exited():
+	cost_area.visible = false

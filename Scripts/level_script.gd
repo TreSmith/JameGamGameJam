@@ -2,6 +2,7 @@ extends Node2D
 
 @export var requiredNotoriety : int = 100
 @export var fortitude_loss_per_turn : int = 1
+@export var level_complete_bonus : int = 10
 
 var current_fortitude_loss = 0
 var current_notoriety = 0
@@ -21,15 +22,14 @@ func _ready():
 
 func _on_next_level_ui_next_level():
 	hand.delete_hand()
-	GameManager.Current_Money += 10
-	SceneManager.next_level()
+	GameManager.Current_Money += (level_complete_bonus + GameManager.Current_Bonus)
 	GameManager.resetLevel()
+	SceneManager.next_level()
 
 
 func _on_end_turn_ui_end_turn():
 	current_fortitude_loss += fortitude_loss_per_turn
 	GameManager.Current_Fortitude -= current_fortitude_loss
-	GameManager.Current_BAC += 1
 	GameManager.Current_Notoriety += GameManager.Current_BAC
 	notoriety.update_notoriety_ui()
 	player_bars.update_bac()

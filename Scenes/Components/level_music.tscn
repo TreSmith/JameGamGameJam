@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqq71xq7yop4i"]
+
+[ext_resource type="AudioStream" uid="uid://bntcnrmcsil7i" path="res://Assets/Sound/hard_rock.mp3" id="1_v1p1i"]
+
+[node name="Level_Music" type="Node"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_v1p1i")
+volume_db = -20.0
+autoplay = true

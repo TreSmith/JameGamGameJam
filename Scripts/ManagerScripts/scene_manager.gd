@@ -35,5 +35,5 @@ func next_level():
 		restart()
 
 func lose_game():
-	GameManager.restartGame()
+	GameManager.reset_data_to_start()
 	get_tree().change_scene_to_file(game_over_scene)

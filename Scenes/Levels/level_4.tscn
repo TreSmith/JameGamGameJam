@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_vwa8l"]
 [ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_8r7w8"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="5_lcesk"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="5_rjhhf"]
+[ext_resource type="PackedScene" uid="uid://m2ijcdfqasye" path="res://Scenes/UI/notoriety.tscn" id="5_rjhhf"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_fxrfo"]
 [ext_resource type="PackedScene" uid="uid://7puib21iekv0" path="res://Scenes/UI/end_turn.tscn" id="6_sxmqh"]
 [ext_resource type="PackedScene" path="res://Scenes/Components/level_music.tscn" id="10_qfrdg"]

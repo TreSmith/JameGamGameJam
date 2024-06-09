@@ -10,13 +10,23 @@ var energy
 var retain
 
 
-@onready var label = %Label
+@onready var state = $State
+@onready var costlabel = $Cost
+@onready var bac = $BAC
+@onready var cardslabel = $Cards
+@onready var energylabel = $Energy
+@onready var retainlabel = $Retain
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	label.text = cardname
-	pass # Replace with function body.
+	state.text = cardname
+	costlabel.text = str(cost)
+	bac.text = (bac.text + str(BAC))
+	cardslabel.text = (cardslabel.text + str(cards))
+	energylabel.text = (energylabel.text + str(energy))
+	retainlabel.text = (retainlabel.text + str(retain))
+
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

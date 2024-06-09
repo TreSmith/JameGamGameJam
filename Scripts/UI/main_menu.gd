@@ -4,4 +4,3 @@ extends Node
 func _on_button_pressed():
 	print("Button Pressed")
 	SceneManager.next_level()
-

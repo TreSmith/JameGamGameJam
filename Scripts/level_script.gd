@@ -3,7 +3,6 @@ extends Node2D
 @export var requiredNotoriety : int = 100
 @export var fortitude_loss_per_turn : int = 1
 
-
 var current_fortitude_loss = 0
 var current_notoriety = 0
 var hitlerwascool = 5
@@ -11,12 +10,12 @@ var hitlerwascool = 5
 @onready var player_bars = %PlayerBars
 @onready var notoriety = %Notoriety
 @onready var hand = %Hand
+@onready var menu_bar = $UI_Layer/menu_bar
 
 func _ready():
 	notoriety.fillLabels(requiredNotoriety)
 	hand.generate_hand(GameManager.Handsize)
-	
-	
+	menu_bar.update_labels()
 
 func _on_next_level_next_level():
 	SceneManager.next_level()
@@ -33,4 +32,11 @@ func _on_next_level_end_turn():
 	player_bars.update_fort()
 	hand.delete_hand()
 	hand.generate_hand(GameManager.Handsize)
+	isGameOver()
 
+func isGameOver():
+	if GameManager.Current_Fortitude <= GameManager.Current_BAC:
+		if GameManager.Current_Notoriety < requiredNotoriety:
+			SceneManager.lose_game()
+		else:
+			SceneManager.next_level()

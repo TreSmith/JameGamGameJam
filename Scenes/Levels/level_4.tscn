@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://cy3fgiw2rwbv2"]
+[gd_scene load_steps=9 format=3 uid="uid://cy3fgiw2rwbv2"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_0e4vm"]
 [ext_resource type="Texture2D" uid="uid://cs1kh062akifw" path="res://Assets/Backgrounds/Level4.jpg" id="1_lmou2"]
+[ext_resource type="PackedScene" uid="uid://dj2x6fjkbkkm0" path="res://Scenes/UI/menu_bar.tscn" id="3_bprfg"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_vwa8l"]
-[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_8r7w8"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="5_rjhhf"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_fxrfo"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/hand.tscn" id="4_8r7w8"]
+[ext_resource type="PackedScene" uid="uid://cwvokrs86ax4x" path="res://Scenes/UI/notoriety.tscn" id="5_rjhhf"]
+[ext_resource type="PackedScene" uid="uid://borgwftef6nl5" path="res://Scenes/UI/player_bars.tscn" id="6_fxrfo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onq6v"]
 size = Vector2(1147, 449)
@@ -32,6 +33,8 @@ grow_vertical = 2
 texture = ExtResource("1_lmou2")
 expand_mode = 3
 stretch_mode = 6
+
+[node name="menu_bar" parent="UI_Layer" instance=ExtResource("3_bprfg")]
 
 [node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_vwa8l")]
 anchors_preset = 15

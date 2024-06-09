@@ -8,4 +8,3 @@ func _on_next_level_btn_pressed():
 
 func _on_end_turn_pressed():
 	end_turn.emit()
-

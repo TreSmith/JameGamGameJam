@@ -14,3 +14,19 @@ var Current_Energy = BASE_ENERGY
 var Current_Notoriety = 0
 var Handsize = DEFAULT_HANDSIZE
 var Energy = DEFAULT_ENERGY
+const STARTING_MONEY : int = 10
+
+
+var Current_Money
+
+func _ready():
+	resetToDefaults()
+
+func resetToDefaults():
+	Current_Fortitude = STARTING_FORTITUDE
+	Current_BAC = STARTING_BAC
+	Current_Energy = BASE_ENERGY
+	Current_Notoriety = 0
+	Handsize = DEFAULT_HANDSIZE
+	Current_Money = STARTING_MONEY
+

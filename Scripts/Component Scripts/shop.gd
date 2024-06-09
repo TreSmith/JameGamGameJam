@@ -7,3 +7,7 @@ func _ready():
 
 func _on_next_level_ui_next_level():
 	SceneManager.next_level()
+
+
+func _on_cards_2_buy_update_money():
+	menu_bar.update_labels()

@@ -7,6 +7,8 @@ const DEFAULT_HANDSIZE : int = 5
 const DEFAULT_ENERGY : int = 3
 const DEFAULT_RETAIN : int = 0
 const STARTING_DECK_SIZE : int = 10
+const STARTING_MONEY : int = 10
+const DEFAULT_BONUS : int = 0
 
 var Current_Fortitude = STARTING_FORTITUDE
 var Current_BAC = STARTING_BAC
@@ -15,8 +17,7 @@ var Current_Notoriety = 0
 var Handsize = DEFAULT_HANDSIZE
 var Energy = DEFAULT_ENERGY
 var Retain = DEFAULT_RETAIN
-const STARTING_MONEY : int = 10
-
+var Current_Bonus = DEFAULT_BONUS
 
 var Current_Money
 var Current_Deck = []
@@ -35,6 +36,7 @@ func resetToDefaults():
 	Current_Fortitude = STARTING_FORTITUDE
 	Current_BAC = STARTING_BAC
 	Current_Energy = BASE_ENERGY
+	Current_Bonus = DEFAULT_BONUS
 	Current_Notoriety = 0
 	Handsize = DEFAULT_HANDSIZE
 
@@ -50,8 +52,8 @@ func resetLevel():
 	Current_Fortitude = STARTING_FORTITUDE
 	Current_BAC = STARTING_BAC
 	Current_Energy = BASE_ENERGY
+	Current_Bonus = DEFAULT_BONUS
 	Handsize = DEFAULT_HANDSIZE
-
 
 func read_json_card_data():
 	var json_parser = JSON.new()
@@ -74,7 +76,7 @@ func get_card_by_id(id: int):
 		if(card["ID"] == id):
 			card_data = card
 			break
-	
+			
 	return card_data
 
 func get_random_card_from_pool(amount : int = 1):
@@ -121,4 +123,6 @@ func add_card_to_deck(id: int):
 	for card in Card_Data_List:
 		if(id == card["ID"]):
 			Current_Deck.append(card)
+			Remaining_Deck.append(card)
+			Remaining_Deck.shuffle()
 			break

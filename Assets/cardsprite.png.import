@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cyni463s4m3hk"
-path="res://.godot/imported/Level1.jpg-6eff3111eb13a3b24fd6c29b6affc0ef.ctex"
+uid="uid://teo0sxij44g2"
+path="res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Backgrounds/Level1.jpg"
-dest_files=["res://.godot/imported/Level1.jpg-6eff3111eb13a3b24fd6c29b6affc0ef.ctex"]
+source_file="res://Assets/cardsprite.png"
+dest_files=["res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"]
 
 [params]
 

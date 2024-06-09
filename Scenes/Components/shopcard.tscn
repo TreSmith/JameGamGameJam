@@ -1,7 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://68ym2vy6l8vu"]
+[gd_scene load_steps=6 format=3 uid="uid://caxqpuk27txsc"]
 
 [ext_resource type="Script" path="res://Scripts/Component Scripts/shopcard.gd" id="1_87p2m"]
-[ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_ei22g"]
+[ext_resource type="FontFile" uid="uid://bk3jng0jojaqj" path="res://ARCADECLASSIC.TTF" id="2_c7efh"]
+[ext_resource type="Theme" uid="uid://s2gpbq3abbeb" path="res://Themes/game_over.tres" id="3_m6rux"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m0qob"]
+load_path = "res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"
+
+[sub_resource type="LabelSettings" id="LabelSettings_6tr1b"]
+font = ExtResource("2_c7efh")
+font_size = 14
+font_color = Color(0, 0, 0, 1)
 
 [node name="Shopcard" type="Control"]
 custom_minimum_size = Vector2(100, 120)
@@ -10,21 +19,10 @@ anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 120.0
 size_flags_horizontal = 4
+mouse_default_cursor_shape = 2
 script = ExtResource("1_87p2m")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(100, 120)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 1
-theme = ExtResource("1_ei22g")
-color = Color(0, 0, 0, 1)
-
-[node name="Button" type="Button" parent="ColorRect"]
+[node name="Button" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -32,15 +30,114 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="."]
-unique_name_in_owner = true
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "CardName"
+[node name="cardsprite" type="Sprite2D" parent="."]
+position = Vector2(50, 60)
+texture = SubResource("CompressedTexture2D_m0qob")
+
+[node name="State" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 4.0
+offset_right = 83.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+text = "Name"
+label_settings = SubResource("LabelSettings_6tr1b")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="pressed" from="ColorRect/Button" to="." method="_on_button_pressed"]
+[node name="Cost" type="Label" parent="."]
+layout_mode = 0
+offset_left = 86.0
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 19.0
+size_flags_horizontal = 0
+text = "1"
+label_settings = SubResource("LabelSettings_6tr1b")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BAC" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 30.0
+offset_right = 83.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+text = "BAC: "
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="Cards" type="Label" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = 82.0
+offset_bottom = 66.0
+size_flags_horizontal = 0
+text = "Cards:"
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="Energy" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 60.0
+offset_right = 83.0
+offset_bottom = 80.0
+size_flags_horizontal = 0
+text = "Energy:"
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="Retain" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 74.0
+offset_right = 83.0
+offset_bottom = 94.0
+size_flags_horizontal = 0
+text = "Retain:"
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="Fortitude" type="Label" parent="."]
+layout_mode = 0
+offset_left = 5.0
+offset_top = 88.0
+offset_right = 83.0
+offset_bottom = 108.0
+size_flags_horizontal = 0
+text = "Fortitude:"
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="CostArea" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -76.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Cost" type="Label" parent="CostArea"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+theme = ExtResource("3_m6rux")
+theme_override_font_sizes/font_size = 40
+text = "$10"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="Button" to="." method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="Button" to="." method="_on_button_mouse_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

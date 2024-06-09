@@ -6,6 +6,13 @@ signal energy_changed()
 
 @onready var color: ColorRect = $Color
 @onready var state: Label = $State
+@onready var costlabel = $Cost
+@onready var bac = $BAC
+@onready var cardslabel = $Cards
+@onready var energylabel = $Energy
+@onready var retainlabel = $Retain
+@onready var fortitude = $Fortitude
+
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
@@ -25,6 +32,12 @@ var ID = 0
 func _ready() -> void:
 	card_state_machine.init(self)
 	state.text = cardname
+	costlabel.text = str(cost)
+	bac.text = (bac.text + str(BAC))
+	cardslabel.text = (cardslabel.text + str(cards))
+	energylabel.text = (energylabel.text + str(energy))
+	retainlabel.text = (retainlabel.text + str(retain))
+	fortitude.text = (fortitude.text + str(fort))
 	
 func _input(event: InputEvent) -> void:
 	card_state_machine.on_input(event)

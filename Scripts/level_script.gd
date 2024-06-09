@@ -11,10 +11,12 @@ var cardsplayed = [0, 0, 0, 0, 0]
 @onready var player_bars = %PlayerBars
 @onready var notoriety = %Notoriety
 @onready var hand = %Hand
+@onready var menu_bar = $UI_Layer/menu_bar
 
 func _ready():
 	notoriety.fillLabels(requiredNotoriety)
 	hand.generate_hand(GameManager.Handsize)
+	menu_bar.update_labels()
 
 func _on_next_level_next_level():
 	SceneManager.next_level()
@@ -35,4 +37,7 @@ func _on_next_level_end_turn():
 
 func isGameOver():
 	if GameManager.Current_Fortitude <= GameManager.Current_BAC:
-		SceneManager.lose_game()
+		if GameManager.Current_Notoriety < requiredNotoriety:
+			SceneManager.lose_game()
+		else:
+			SceneManager.next_level()

@@ -8,11 +8,15 @@ const STARTING_MONEY : int = 10
 
 var deck = []
 
-var Current_Fortitude = STARTING_FORTITUDE
-var Current_BAC = STARTING_BAC
-var Current_Energy = BASE_ENERGY
-var Current_Notoriety = 0
-var Handsize = DEFAULT_HANDSIZE
+var Current_Fortitude
+var Current_BAC
+var Current_Energy
+var Current_Notoriety
+var Handsize
+var Current_Money
+
+func _ready():
+	resetToDefaults()
 
 func resetToDefaults():
 	Current_Fortitude = STARTING_FORTITUDE
@@ -20,3 +24,4 @@ func resetToDefaults():
 	Current_Energy = BASE_ENERGY
 	Current_Notoriety = 0
 	Handsize = DEFAULT_HANDSIZE
+	Current_Money = STARTING_MONEY

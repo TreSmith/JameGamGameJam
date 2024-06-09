@@ -1,16 +1,20 @@
-[gd_scene load_steps=11 format=3 uid="uid://dajxjx2fy2sfo"]
+[gd_scene load_steps=12 format=3 uid="uid://dajxjx2fy2sfo"]
 
 [ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_7u2p4"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card.gd" id="2_frdf4"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_state_machine.gd" id="3_84lq7"]
-[ext_resource type="Texture2D" uid="uid://cgmru1v3ye5dr" path="res://Assets/cardsprite.png" id="3_lhde1"]
+[ext_resource type="FontFile" uid="uid://bk3jng0jojaqj" path="res://ARCADECLASSIC.TTF" id="3_f6n7q"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_base_state.gd" id="4_hkacp"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_clicked_state.gd" id="5_ja0py"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_dragging_state.gd" id="6_0lvuv"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_released_state.gd" id="7_qrhrg"]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_76s7b"]
+load_path = "res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"
+
 [sub_resource type="LabelSettings" id="LabelSettings_6lsep"]
-font_size = 10
+font = ExtResource("3_f6n7q")
+font_size = 14
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l7gt6"]
@@ -27,7 +31,7 @@ script = ExtResource("2_frdf4")
 
 [node name="cardsprite" type="Sprite2D" parent="."]
 position = Vector2(50, 60)
-texture = ExtResource("3_lhde1")
+texture = SubResource("CompressedTexture2D_76s7b")
 
 [node name="State" type="Label" parent="."]
 offset_left = 5.0
@@ -40,7 +44,59 @@ label_settings = SubResource("LabelSettings_6lsep")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Cost" type="Label" parent="."]
+offset_left = 86.0
+offset_top = 4.0
+offset_right = 98.0
+offset_bottom = 18.0
+size_flags_horizontal = 0
+text = "1"
+label_settings = SubResource("LabelSettings_6lsep")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BAC" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 30.0
+offset_right = 86.0
+offset_bottom = 50.0
+size_flags_horizontal = 0
+text = "BAC: "
+label_settings = SubResource("LabelSettings_6lsep")
+vertical_alignment = 1
+
+[node name="Cards" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 48.0
+offset_right = 85.0
+offset_bottom = 68.0
+size_flags_horizontal = 0
+text = "Cards:"
+label_settings = SubResource("LabelSettings_6lsep")
+vertical_alignment = 1
+
+[node name="Energy" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 67.0
+offset_right = 86.0
+offset_bottom = 87.0
+size_flags_horizontal = 0
+text = "Energy:"
+label_settings = SubResource("LabelSettings_6lsep")
+vertical_alignment = 1
+
+[node name="Retain" type="Label" parent="."]
+offset_left = 7.0
+offset_top = 85.0
+offset_right = 85.0
+offset_bottom = 105.0
+size_flags_horizontal = 0
+text = "Retain:"
+label_settings = SubResource("LabelSettings_6lsep")
+vertical_alignment = 1
+
 [node name="DropPointDetector" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 monitorable = false
 

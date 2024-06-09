@@ -11,12 +11,12 @@ func _ready():
 	fort_bar.value = 0
 	fort_label.text = "FORT: " + str(GameManager.STARTING_FORTITUDE)
 
-func update_bac(amount):
-	bac_bar.value += amount
-	bac_label.text = "BAC: " + str(bac_bar.value)
+func update_bac():
+	bac_bar.value = GameManager.Current_BAC
+	bac_label.text = "BAC: " + str(GameManager.Current_BAC)
 	
-func update_fort(amount):
-	fort_bar.value += amount
-	var fort_label_text = GameManager.STARTING_FORTITUDE - fort_bar.value
+func update_fort():
+	fort_bar.value = GameManager.STARTING_FORTITUDE - GameManager.Current_Fortitude
+	var fort_label_text = GameManager.Current_Fortitude
 	fort_label.text = "FORT: " + str(fort_label_text)
 	

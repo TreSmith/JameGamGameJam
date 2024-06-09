@@ -1,5 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://borgwftef6nl5"]
+[gd_scene load_steps=6 format=3 uid="uid://borgwftef6nl5"]
 
+[ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_5bfiq"]
 [ext_resource type="Script" path="res://Scripts/UI/PlayerBars.gd" id="1_8bcje"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_w6b85"]
@@ -16,6 +17,7 @@ anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 130.0
 grow_vertical = 2
+theme = ExtResource("1_5bfiq")
 script = ExtResource("1_8bcje")
 
 [node name="BAC_Bar" type="ProgressBar" parent="."]

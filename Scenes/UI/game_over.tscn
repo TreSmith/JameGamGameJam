@@ -1,0 +1,94 @@
+[gd_scene load_steps=6 format=3 uid="uid://ox1jvivstyk4"]
+
+[ext_resource type="Theme" uid="uid://s2gpbq3abbeb" path="res://Themes/game_over.tres" id="1_iglbe"]
+[ext_resource type="Script" path="res://Scripts/UI/GameOver.gd" id="2_14yuf"]
+[ext_resource type="Texture2D" uid="uid://bnmjv3qm6ch25" path="res://Assets/Backgrounds/GameOver.jpg" id="3_j1nkb"]
+[ext_resource type="FontFile" uid="uid://cc4phoouitjxl" path="res://Tiny5-Regular.ttf" id="4_0ea61"]
+[ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="5_s7w5h"]
+
+[node name="GameOver" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iglbe")
+script = ExtResource("2_14yuf")
+
+[node name="UI_Layer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="UI_Layer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_j1nkb")
+expand_mode = 3
+stretch_mode = 6
+
+[node name="Panel" type="Panel" parent="UI_Layer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -340.0
+offset_top = -107.0
+offset_right = 360.0
+offset_bottom = 93.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="YouPassedOut" type="Label" parent="UI_Layer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -275.0
+offset_top = -45.0
+offset_right = 275.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_0ea61")
+theme_override_font_sizes/font_size = 80
+text = "You Passed Out!"
+
+[node name="Label" type="Label" parent="UI_Layer/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -141.5
+offset_top = 50.0
+offset_right = 141.5
+offset_bottom = 73.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_s7w5h")
+theme_override_font_sizes/font_size = 20
+text = "You partied too close to the sun..."
+
+[node name="Restart" type="Button" parent="UI_Layer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -69.0
+offset_top = 126.0
+offset_right = 69.0
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_s7w5h")
+theme_override_font_sizes/font_size = 40
+text = "Restart"
+
+[connection signal="pressed" from="UI_Layer/Restart" to="." method="_on_restart_pressed"]

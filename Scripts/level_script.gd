@@ -18,6 +18,7 @@ func _ready():
 	menu_bar.update_labels()
 
 func _on_next_level_ui_next_level():
+	hand.delete_hand()
 	SceneManager.next_level()
 	GameManager.resetLevel()
 

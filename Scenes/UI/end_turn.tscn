@@ -24,7 +24,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_wef6x")
-theme_override_font_sizes/font_size = 20
+theme_override_font_sizes/font_size = 25
 text = "Drink"
 
 [connection signal="pressed" from="EndTurn" to="." method="_on_end_turn_pressed"]

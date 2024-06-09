@@ -77,7 +77,7 @@ func get_card_by_id(id: int):
 	
 	return card_data
 
-func get_random_card_from_pool():
+func get_random_card_from_pool(amount : int = 1):
 	var rng = RandomNumberGenerator.new()
 	var total_cards = Card_Data_List.size() - 1
 	var index = rng.randi_range(0, total_cards)

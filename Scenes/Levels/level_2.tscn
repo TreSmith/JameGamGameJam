@@ -1,17 +1,61 @@
-[gd_scene load_steps=11 format=3 uid="uid://sk06dailw4rp"]
+[gd_scene load_steps=18 format=3 uid="uid://sk06dailw4rp"]
 
 [ext_resource type="Texture2D" uid="uid://dt3smeuvoydug" path="res://Assets/Backgrounds/Level2.jpg" id="1_n2d4i"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_on5jf"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_gtfh0"]
+[ext_resource type="Texture2D" uid="uid://oxwymqc2mic5" path="res://Assets/redsolo.png" id="3_qukj7"]
 [ext_resource type="PackedScene" uid="uid://bq5hpwv6p0fnw" path="res://Scenes/UI/menu_bar.tscn" id="3_tosjd"]
-[ext_resource type="PackedScene" path="res://Scenes/Components/hand.tscn" id="4_pb1wq"]
-[ext_resource type="PackedScene" uid="uid://c14ljwaxio8v4" path="res://Scenes/UI/energy_ui.tscn" id="5_c83qu"]
-[ext_resource type="PackedScene" uid="uid://cwvokrs86ax4x" path="res://Scenes/UI/notoriety.tscn" id="5_iem2d"]
+[ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_pb1wq"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="5_c83qu"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="5_iem2d"]
 [ext_resource type="PackedScene" uid="uid://7puib21iekv0" path="res://Scenes/UI/end_turn.tscn" id="6_48vim"]
-[ext_resource type="PackedScene" uid="uid://borgwftef6nl5" path="res://Scenes/UI/player_bars.tscn" id="6_shp4r"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_shp4r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6bjm"]
 size = Vector2(1147, 449)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wmrp"]
+atlas = ExtResource("3_qukj7")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_heryc"]
+atlas = ExtResource("3_qukj7")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kc5ev"]
+atlas = ExtResource("3_qukj7")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_spn0q"]
+atlas = ExtResource("3_qukj7")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lf1cl"]
+atlas = ExtResource("3_qukj7")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_a1mig"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wmrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_heryc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kc5ev")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_spn0q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lf1cl")
+}],
+"loop": false,
+"name": &"splash",
+"speed": 10.0
+}]
 
 [node name="level_2" type="Node2D"]
 script = ExtResource("1_on5jf")
@@ -35,6 +79,13 @@ grow_vertical = 2
 texture = ExtResource("1_n2d4i")
 expand_mode = 3
 stretch_mode = 6
+
+[node name="SoloCup" type="AnimatedSprite2D" parent="UI_Layer"]
+visibility_layer = 2
+position = Vector2(558, 359)
+scale = Vector2(0.632, 0.6)
+sprite_frames = SubResource("SpriteFrames_a1mig")
+animation = &"splash"
 
 [node name="menu_bar" parent="UI_Layer" instance=ExtResource("3_tosjd")]
 

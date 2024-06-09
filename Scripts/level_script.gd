@@ -13,6 +13,7 @@ var current_notoriety = 0
 @onready var menu_bar = $UI_Layer/menu_bar
 @onready var energy_ui = %Energy_UI
 @onready var next_level_ui = $UI_Layer/NextLevel_UI
+@onready var solo_cup = $UI_Layer/SoloCup
 
 func _ready():
 	notoriety.add_requirements(requiredNotoriety)
@@ -41,6 +42,8 @@ func _on_end_turn_ui_end_turn():
 	is_requirements_passed()
 
 func _on_hand_change_energy():
+	solo_cup.frame = 0
+	solo_cup.play()
 	energy_ui.update_label()
 
 func is_game_over():

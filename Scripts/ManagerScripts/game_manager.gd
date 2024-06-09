@@ -19,16 +19,16 @@ const STARTING_MONEY : int = 10
 
 
 var Current_Money
-var Current_Deck
-var Dicard_Pile
-var Remaining_Deck
+var Current_Deck = []
+var Discard_Pile = []
+var Remaining_Deck = []
 
 var card_json_data_path = "res://Data/card_data.json"
 var Card_Data_List
 
 func _ready():
-	resetToDefaults()
 	read_json_card_data()
+	resetToDefaults()
 	build_starting_deck()
 
 func resetToDefaults():
@@ -38,6 +38,9 @@ func resetToDefaults():
 	Current_Notoriety = 0
 	Handsize = DEFAULT_HANDSIZE
 	Current_Money = STARTING_MONEY
+	Current_Deck = []
+	Discard_Pile = []
+	build_starting_deck()
 	
 func resetLevel():
 	Current_Fortitude = STARTING_FORTITUDE
@@ -70,8 +73,9 @@ func get_card_by_id(id: int):
 	
 	return card_data
 
-func get_random_card():
+func get_random_card_from_pool():
 	var rng = RandomNumberGenerator.new()
+	var maxRange = Card_Data_List.size()
 
 func build_starting_deck():
 	Current_Deck = []
@@ -86,3 +90,16 @@ func build_starting_deck():
 				Current_Deck.append(card)
 		elif(card["Name"] == "Coffee"):
 			Current_Deck.append(card)
+	Remaining_Deck = Current_Deck.duplicate(true)
+	Remaining_Deck.shuffle()
+
+func reshuffle_discard_into_deck():
+	Remaining_Deck = Current_Deck.duplicate(true)
+	Remaining_Deck.shuffle()
+	Discard_Pile = []
+
+func draw_card():
+	return Remaining_Deck.pop_front()
+
+func discard_card(id: int):
+	Discard_Pile.append(get_card_by_id(id))

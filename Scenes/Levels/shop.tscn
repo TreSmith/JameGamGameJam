@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://caec80768mumv" path="res://Assets/Backgrounds/Shop.jpg" id="1_k8gka"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/shop.gd" id="1_wbwhc"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_1sknc"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/menu_bar.tscn" id="3_7bf6k"]
+[ext_resource type="PackedScene" uid="uid://dj2x6fjkbkkm0" path="res://Scenes/UI/menu_bar.tscn" id="3_7bf6k"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/Cards2Buy.gd" id="5_hy0tl"]
-[ext_resource type="PackedScene" uid="uid://68ym2vy6l8vu" path="res://Scenes/Components/shopcard.tscn" id="6_5o0sq"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/shopcard.tscn" id="6_5o0sq"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_wbwhc")
@@ -24,12 +24,7 @@ stretch_mode = 6
 
 [node name="menu_bar" parent="UI_Layer" instance=ExtResource("3_7bf6k")]
 
-[node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_1sknc")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-mouse_filter = 1
+[node name="NextLevel_UI" parent="UI_Layer" instance=ExtResource("3_1sknc")]
 
 [node name="CardsToBuy" type="Panel" parent="UI_Layer"]
 offset_left = 35.0
@@ -51,4 +46,4 @@ alignment = 1
 script = ExtResource("5_hy0tl")
 card_scene = ExtResource("6_5o0sq")
 
-[connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]
+[connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]

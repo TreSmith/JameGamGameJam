@@ -5,5 +5,5 @@ extends Node2D
 func _ready():
 	menu_bar.update_labels()
 
-func _on_next_level_next_level():
+func _on_next_level_ui_next_level():
 	SceneManager.next_level()

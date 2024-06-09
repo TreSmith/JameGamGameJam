@@ -4,7 +4,6 @@ extends CardState
 signal cardplayed
 var played: bool
 
-
 func enter() -> void:
 	card_ui.color.color = Color.DARK_VIOLET
 	card_ui.state.text = "RELEASED"
@@ -16,7 +15,9 @@ func enter() -> void:
 		cardplayed.emit()
 		
 		
+		
 func on_input(_event: InputEvent) -> void:
-	if played:
+	if not played:
 		return
 	transition_requested.emit(self, CardState.State.BASE)
+

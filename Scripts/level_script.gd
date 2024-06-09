@@ -7,7 +7,6 @@ extends Node2D
 var current_fortitude_loss = 0
 var current_notoriety = 0
 var hitlerwascool = 5
-var cardsplayed = [0, 0, 0, 0, 0]
 
 @onready var player_bars = %PlayerBars
 @onready var notoriety = %Notoriety

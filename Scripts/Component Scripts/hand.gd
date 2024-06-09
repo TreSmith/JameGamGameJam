@@ -14,7 +14,11 @@ func generate_hand(handsize):
 	for i in handsize:
 		var c = card_scene.instantiate()
 		add_child(c)
+		c.reparent_requested.connect(_on_card_ui_reparent_requested)
+	GameManager.Handsize = GameManager.DEFAULT_HANDSIZE
+	GameManager.Current_Energy = GameManager.Energy
+	GameManager.Energy = GameManager.DEFAULT_ENERGY
 		
 func delete_hand():
 	for c in get_children():
-			c.playcard()
+			c.discardcard()

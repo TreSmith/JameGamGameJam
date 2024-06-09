@@ -114,3 +114,9 @@ func draw_card(amount : int = 1):
 
 func discard_card(id: int):
 	Discard_Pile.append(get_card_by_id(id))
+
+func add_card_to_deck(id: int):
+	for card in Card_Data_List:
+		if(id == card["ID"]):
+			Current_Deck.append(card)
+			break

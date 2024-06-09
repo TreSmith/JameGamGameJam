@@ -14,8 +14,6 @@ func enter() -> void:
 		played = true
 		cardplayed.emit()
 
-		
-		
 func on_input(_event: InputEvent) -> void:
 	if not played:
 		transition_requested.emit(self, CardState.State.BASE)

@@ -54,7 +54,7 @@ func _on_card_released_state_cardplayed():
 		GameManager.Current_Energy -= cost
 		GameManager.Energy += energy
 		var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
-		tw.tween_property(self, "scale", scale * 3, 0.3)
+		tw.tween_property(self, "scale", get_parent().get_parent().scale * 3, 0.3)
 		tw.tween_property(self, "modulate:a", 0.0, 0.3)
 		await tw.finished
 		queue_free()

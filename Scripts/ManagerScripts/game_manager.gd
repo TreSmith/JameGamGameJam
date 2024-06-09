@@ -14,7 +14,7 @@ var Current_Energy = BASE_ENERGY
 var Current_Notoriety = 0
 var Handsize = DEFAULT_HANDSIZE
 var Energy = DEFAULT_ENERGY
-var Retain = DEFAULT_ENERGY
+var Retain = DEFAULT_RETAIN
 const STARTING_MONEY : int = 10
 
 

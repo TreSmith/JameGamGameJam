@@ -55,9 +55,9 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BAC" type="Label" parent="."]
-offset_left = 8.0
+offset_left = 5.0
 offset_top = 30.0
-offset_right = 86.0
+offset_right = 83.0
 offset_bottom = 50.0
 size_flags_horizontal = 0
 text = "BAC: "
@@ -65,32 +65,42 @@ label_settings = SubResource("LabelSettings_6tr1b")
 vertical_alignment = 1
 
 [node name="Cards" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 48.0
-offset_right = 85.0
-offset_bottom = 68.0
+offset_left = 4.0
+offset_top = 46.0
+offset_right = 82.0
+offset_bottom = 66.0
 size_flags_horizontal = 0
 text = "Cards:"
 label_settings = SubResource("LabelSettings_6tr1b")
 vertical_alignment = 1
 
 [node name="Energy" type="Label" parent="."]
-offset_left = 8.0
-offset_top = 67.0
-offset_right = 86.0
-offset_bottom = 87.0
+offset_left = 5.0
+offset_top = 60.0
+offset_right = 83.0
+offset_bottom = 80.0
 size_flags_horizontal = 0
 text = "Energy:"
 label_settings = SubResource("LabelSettings_6tr1b")
 vertical_alignment = 1
 
 [node name="Retain" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 85.0
-offset_right = 85.0
-offset_bottom = 105.0
+offset_left = 5.0
+offset_top = 74.0
+offset_right = 83.0
+offset_bottom = 94.0
 size_flags_horizontal = 0
 text = "Retain:"
+label_settings = SubResource("LabelSettings_6tr1b")
+vertical_alignment = 1
+
+[node name="Fortitude" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 88.0
+offset_right = 83.0
+offset_bottom = 108.0
+size_flags_horizontal = 0
+text = "Fortitude:"
 label_settings = SubResource("LabelSettings_6tr1b")
 vertical_alignment = 1
 

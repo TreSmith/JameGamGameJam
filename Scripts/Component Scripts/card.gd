@@ -11,6 +11,7 @@ signal energy_changed()
 @onready var cardslabel = $Cards
 @onready var energylabel = $Energy
 @onready var retainlabel = $Retain
+@onready var fortitude = $Fortitude
 
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
@@ -36,6 +37,7 @@ func _ready() -> void:
 	cardslabel.text = (cardslabel.text + str(cards))
 	energylabel.text = (energylabel.text + str(energy))
 	retainlabel.text = (retainlabel.text + str(retain))
+	fortitude.text = (fortitude.text + str(fort))
 	
 func _input(event: InputEvent) -> void:
 	card_state_machine.on_input(event)

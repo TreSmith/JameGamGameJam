@@ -30,14 +30,14 @@ theme = ExtResource("1_7u2p4")
 script = ExtResource("2_frdf4")
 
 [node name="cardsprite" type="Sprite2D" parent="."]
-position = Vector2(50, 60)
+position = Vector2(51, 60)
 texture = SubResource("CompressedTexture2D_76s7b")
 
 [node name="State" type="Label" parent="."]
-offset_left = 5.0
+offset_left = 6.0
 offset_top = 4.0
-offset_right = 83.0
-offset_bottom = 18.0
+offset_right = 84.0
+offset_bottom = 19.0
 size_flags_horizontal = 0
 text = "Name"
 label_settings = SubResource("LabelSettings_6lsep")
@@ -45,10 +45,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cost" type="Label" parent="."]
-offset_left = 86.0
+offset_left = 87.0
 offset_top = 4.0
-offset_right = 98.0
-offset_bottom = 18.0
+offset_right = 99.0
+offset_bottom = 19.0
 size_flags_horizontal = 0
 text = "1"
 label_settings = SubResource("LabelSettings_6lsep")
@@ -57,9 +57,9 @@ vertical_alignment = 1
 
 [node name="BAC" type="Label" parent="."]
 offset_left = 8.0
-offset_top = 30.0
+offset_top = 27.0
 offset_right = 86.0
-offset_bottom = 50.0
+offset_bottom = 47.0
 size_flags_horizontal = 0
 text = "BAC: "
 label_settings = SubResource("LabelSettings_6lsep")
@@ -67,9 +67,9 @@ vertical_alignment = 1
 
 [node name="Cards" type="Label" parent="."]
 offset_left = 7.0
-offset_top = 48.0
+offset_top = 45.0
 offset_right = 85.0
-offset_bottom = 68.0
+offset_bottom = 65.0
 size_flags_horizontal = 0
 text = "Cards:"
 label_settings = SubResource("LabelSettings_6lsep")
@@ -77,25 +77,36 @@ vertical_alignment = 1
 
 [node name="Energy" type="Label" parent="."]
 offset_left = 8.0
-offset_top = 67.0
+offset_top = 61.0
 offset_right = 86.0
-offset_bottom = 87.0
+offset_bottom = 81.0
 size_flags_horizontal = 0
 text = "Energy:"
 label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
 [node name="Retain" type="Label" parent="."]
-offset_left = 7.0
-offset_top = 85.0
-offset_right = 85.0
-offset_bottom = 105.0
+offset_left = 8.0
+offset_top = 76.0
+offset_right = 86.0
+offset_bottom = 96.0
 size_flags_horizontal = 0
 text = "Retain:"
 label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
+[node name="Fortitude" type="Label" parent="."]
+offset_left = 8.0
+offset_top = 93.0
+offset_right = 86.0
+offset_bottom = 113.0
+size_flags_horizontal = 0
+text = "Fortitude:"
+label_settings = SubResource("LabelSettings_6lsep")
+vertical_alignment = 1
+
 [node name="DropPointDetector" type="Area2D" parent="."]
+visible = false
 collision_mask = 2
 monitorable = false
 

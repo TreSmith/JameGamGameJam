@@ -16,6 +16,7 @@ var retain
 @onready var cardslabel = $Cards
 @onready var energylabel = $Energy
 @onready var retainlabel = $Retain
+@onready var fortitude = $Fortitude
 
 
 # Called when the node enters the scene tree for the first time.
@@ -26,7 +27,7 @@ func _ready():
 	cardslabel.text = (cardslabel.text + str(cards))
 	energylabel.text = (energylabel.text + str(energy))
 	retainlabel.text = (retainlabel.text + str(retain))
-
+	fortitude.text = (fortitude.text + str(fort))
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

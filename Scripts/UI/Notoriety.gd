@@ -5,12 +5,17 @@ extends Panel
 
 var required_notoriety = 0
 
-func fillLabels(requirements):
+func add_requirements(requirements):
 	required_notoriety = requirements
-	notoriety_bar.value = 0
-	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)
+	update_notoriety_ui()
 
 func update_notoriety_ui():
 	notoriety_bar.value = GameManager.Current_Notoriety
 	var notoriety_left = required_notoriety - GameManager.Current_Notoriety
-	notoriety_label.text = "Required Notoriety: " + str(notoriety_left)
+	if notoriety_left > 0:
+		notoriety_label.text = "Required Notoriety: " + str(notoriety_left)
+	else:
+		var current_bonus_notoriety = int((GameManager.Current_Notoriety - required_notoriety)/20)
+		GameManager.Current_Bonus = current_bonus_notoriety
+		notoriety_label.text = "YOU ARE NOTORIOUS!! BONUS CASH: $" + str(GameManager.Current_Bonus) 	
+

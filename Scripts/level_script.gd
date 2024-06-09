@@ -14,7 +14,7 @@ var current_notoriety = 0
 @onready var next_level_ui = $UI_Layer/NextLevel_UI
 
 func _ready():
-	notoriety.fillLabels(requiredNotoriety)
+	notoriety.add_requirements(requiredNotoriety)
 	hand.generate_hand(GameManager.Handsize)
 	menu_bar.update_labels()
 	next_level_ui.visible = false;

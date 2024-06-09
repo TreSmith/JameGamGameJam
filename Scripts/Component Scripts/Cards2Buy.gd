@@ -6,8 +6,7 @@ extends VBoxContainer
 
 func _ready() -> void:
 	generate_hand()
-	
-		
+
 
 func generate_hand():
 	var cards = GameManager.draw_card(8)

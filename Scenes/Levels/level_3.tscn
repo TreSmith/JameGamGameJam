@@ -37,13 +37,9 @@ stretch_mode = 6
 
 [node name="menu_bar" parent="UI_Layer" instance=ExtResource("3_bbir8")]
 
-[node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_aiwgx")]
-offset_left = 0.0
-offset_top = 0.0
-offset_right = 0.0
-offset_bottom = 0.0
-
 [node name="Energy_UI" parent="UI_Layer" instance=ExtResource("5_33vk4")]
+
+[node name="NextLevel_UI" parent="UI_Layer" instance=ExtResource("3_aiwgx")]
 
 [node name="Hand" parent="UI_Layer" instance=ExtResource("4_np0ak")]
 unique_name_in_owner = true
@@ -54,5 +50,5 @@ unique_name_in_owner = true
 [node name="PlayerBars" parent="UI_Layer" instance=ExtResource("6_phiha")]
 unique_name_in_owner = true
 
-[connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]
+[connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]
 [connection signal="change_energy" from="UI_Layer/Hand" to="." method="_on_hand_change_energy"]

@@ -73,6 +73,7 @@ grow_vertical = 2
 texture = ExtResource("2_5sgxa")
 
 [node name="HowToPlay" type="Button" parent="CanvasLayer/Initial"]
+layout_mode = 0
 offset_left = 483.0
 offset_top = 450.0
 offset_right = 670.0

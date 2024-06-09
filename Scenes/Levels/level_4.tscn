@@ -60,7 +60,7 @@ animations = [{
 
 [node name="level_4" type="Node2D"]
 script = ExtResource("1_0e4vm")
-requiredNotoriety = 325
+requiredNotoriety = 275
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2

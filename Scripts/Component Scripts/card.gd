@@ -13,6 +13,7 @@ signal reparent_requested(which_card_ui: Card)
 
 
 var cardname = ""
+var ID = 0
 @export var BAC = 0
 @export var cost = 3
 @export var fort = 0
@@ -45,7 +46,7 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 
 func discardcard():
-	GameManager.discard(cardname)
+	GameManager.discard_card(ID)
 	queue_free()
 	
 func _on_card_released_state_cardplayed():

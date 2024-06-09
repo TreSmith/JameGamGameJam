@@ -12,7 +12,7 @@ signal energy_changed()
 @onready var card_released_state = %CardReleasedState
 
 
-var cardname = ""
+var cardname = "Temp"
 var ID = 0
 @export var BAC = 0
 @export var cost = 3

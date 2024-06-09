@@ -12,12 +12,11 @@ font_size = 14
 font_color = Color(0, 0, 0, 1)
 
 [node name="Shopcard" type="Control"]
-custom_minimum_size = Vector2(80, 120)
+custom_minimum_size = Vector2(100, 120)
 layout_mode = 3
 anchors_preset = 0
 offset_right = 100.0
 offset_bottom = 120.0
-scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 4
 script = ExtResource("1_87p2m")
 

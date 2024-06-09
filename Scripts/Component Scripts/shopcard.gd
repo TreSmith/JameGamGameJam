@@ -19,6 +19,8 @@ signal money_update
 @onready var retainlabel = $Retain
 @onready var fortitude = $Fortitude
 @onready var cost_area = $CostArea
+@onready var card_buy = $CardBuy
+@onready var card_cannot_buy = $CardCannotBuy
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -33,6 +35,7 @@ func _ready():
 
 func _on_button_pressed():
 	if (GameManager.Current_Money >= 10):
+		card_buy.play()
 		GameManager.Current_Money -= 10
 		GameManager.add_card_to_deck(ID)
 		var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
@@ -41,11 +44,11 @@ func _on_button_pressed():
 		await tw.finished
 		money_update.emit()
 		queue_free()
+	else:
+		card_cannot_buy.play()
 
 func _on_button_mouse_entered():
 	cost_area.visible = true
-
-
 
 func _on_button_mouse_exited():
 	cost_area.visible = false

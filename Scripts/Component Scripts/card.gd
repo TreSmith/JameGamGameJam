@@ -4,7 +4,6 @@ extends Control
 signal reparent_requested(which_card_ui: Card)
 signal energy_changed()
 
-@onready var color: ColorRect = $Color
 @onready var state: Label = $State
 @onready var costlabel = $Cost
 @onready var bac = $BAC
@@ -12,6 +11,9 @@ signal energy_changed()
 @onready var energylabel = $Energy
 @onready var retainlabel = $Retain
 @onready var fortitude = $Fortitude
+@onready var played_card = $PlayedCard
+@onready var cannot_play = $CannotPlay
+
 
 @onready var card_state_machine: CardStateMachine = $CardStateMachine as CardStateMachine
 @onready var drop_point_detector = $DropPointDetector
@@ -65,6 +67,7 @@ func discardcard():
 	
 func _on_card_released_state_cardplayed():
 	if ((GameManager.Current_Energy - cost) >= 0):
+		played_card.play()
 		GameManager.discard_card(ID)
 		GameManager.Current_Fortitude += fort
 		GameManager.Current_BAC += BAC
@@ -78,4 +81,5 @@ func _on_card_released_state_cardplayed():
 		tw.tween_property(self, "modulate:a", 0.0, 0.3)
 		await tw.finished
 		queue_free()
-
+	else:
+		cannot_play.play()

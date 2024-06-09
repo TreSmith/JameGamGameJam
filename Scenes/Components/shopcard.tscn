@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://caxqpuk27txsc"]
+[gd_scene load_steps=7 format=3 uid="uid://caxqpuk27txsc"]
 
 [ext_resource type="Script" path="res://Scripts/Component Scripts/shopcard.gd" id="1_87p2m"]
 [ext_resource type="FontFile" uid="uid://bk3jng0jojaqj" path="res://ARCADECLASSIC.TTF" id="2_c7efh"]
 [ext_resource type="Theme" uid="uid://s2gpbq3abbeb" path="res://Themes/game_over.tres" id="3_m6rux"]
+[ext_resource type="AudioStream" uid="uid://d120nmc7pmjjr" path="res://Assets/Sound/glass_clink.wav" id="4_6j5ab"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m0qob"]
 load_path = "res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"
@@ -135,6 +136,15 @@ theme_override_font_sizes/font_size = 40
 text = "$10"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="CardBuy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6j5ab")
+volume_db = -10.0
+
+[node name="CardCannotBuy" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6j5ab")
+volume_db = -10.0
+pitch_scale = 5.0
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

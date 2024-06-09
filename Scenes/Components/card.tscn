@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dajxjx2fy2sfo"]
+[gd_scene load_steps=14 format=3 uid="uid://dajxjx2fy2sfo"]
 
 [ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_7u2p4"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card.gd" id="2_frdf4"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_clicked_state.gd" id="5_ja0py"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_dragging_state.gd" id="6_0lvuv"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/card_states/card_released_state.gd" id="7_qrhrg"]
+[ext_resource type="AudioStream" uid="uid://cfhbq0gwwairb" path="res://Assets/Sound/splash_1.wav" id="9_m73w0"]
+[ext_resource type="AudioStream" uid="uid://stgfyed74mhu" path="res://Assets/Sound/splash_2.wav" id="10_0f4ug"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_76s7b"]
 load_path = "res://.godot/imported/cardsprite.png-31e7c3b13d5c1902169e5061ca1e8bfe.ctex"
@@ -34,6 +36,7 @@ position = Vector2(51, 60)
 texture = SubResource("CompressedTexture2D_76s7b")
 
 [node name="State" type="Label" parent="."]
+layout_mode = 0
 offset_left = 6.0
 offset_top = 4.0
 offset_right = 84.0
@@ -45,6 +48,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Cost" type="Label" parent="."]
+layout_mode = 0
 offset_left = 87.0
 offset_top = 4.0
 offset_right = 99.0
@@ -56,6 +60,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="BAC" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 27.0
 offset_right = 86.0
@@ -66,6 +71,7 @@ label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
 [node name="Cards" type="Label" parent="."]
+layout_mode = 0
 offset_left = 7.0
 offset_top = 45.0
 offset_right = 85.0
@@ -76,6 +82,7 @@ label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
 [node name="Energy" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 61.0
 offset_right = 86.0
@@ -86,6 +93,7 @@ label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
 [node name="Retain" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 76.0
 offset_right = 86.0
@@ -96,6 +104,7 @@ label_settings = SubResource("LabelSettings_6lsep")
 vertical_alignment = 1
 
 [node name="Fortitude" type="Label" parent="."]
+layout_mode = 0
 offset_left = 8.0
 offset_top = 93.0
 offset_right = 86.0
@@ -131,6 +140,14 @@ script = ExtResource("5_ja0py")
 [node name="CardReleasedState" type="Node" parent="CardStateMachine"]
 unique_name_in_owner = true
 script = ExtResource("7_qrhrg")
+
+[node name="PlayedCard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_m73w0")
+
+[node name="CannotPlay" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("10_0f4ug")
+volume_db = -10.0
+pitch_scale = 0.5
 
 [connection signal="gui_input" from="." to="." method="_on_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]

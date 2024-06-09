@@ -1,7 +1,9 @@
 extends Control
 
-@onready var money = $UI_Layer/menu_bar_area/Money
-@onready var level = $UI_Layer/menu_bar_area/Level
+@onready var money = %Money
+@onready var level = %Level
+
+signal view_deck
 
 func _ready():
 	update_labels()
@@ -12,3 +14,7 @@ func update_labels():
 		level.text = "Level: " + str(SceneManager.current_level)
 	else:
 		level.text = "Shop"
+
+
+func _on_view_deck_pressed():
+	view_deck.emit()

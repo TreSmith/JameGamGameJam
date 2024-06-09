@@ -12,7 +12,7 @@ func _on_card_ui_reparent_requested(child: Card) -> void:
 
 func generate_hand(handsize):
 	var cards = GameManager.draw_card(GameManager.Handsize)
-	for card in cards:
+	for card in cards:	
 		var c = card_scene.instantiate()
 		c.ID = card["ID"]
 		c.BAC = card["BAC"]

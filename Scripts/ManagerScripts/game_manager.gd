@@ -94,7 +94,7 @@ func build_starting_deck():
 	Remaining_Deck.shuffle()
 
 func reshuffle_discard_into_deck():
-	Remaining_Deck = Current_Deck.duplicate(true)
+	Remaining_Deck = Discard_Pile.duplicate(true)
 	Remaining_Deck.shuffle()
 	Discard_Pile = []
 

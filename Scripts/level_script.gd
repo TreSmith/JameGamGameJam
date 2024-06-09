@@ -16,13 +16,12 @@ func _ready():
 	hand.generate_hand(GameManager.Handsize)
 	menu_bar.update_labels()
 
-func _on_next_level_next_level():
+func _on_next_level_ui_next_level():
 	SceneManager.next_level()
 	GameManager.resetLevel()
 
-#handle next turn logic
-#remove fortitude, check if fortitude matches current BAC, update progress bars, deal new hand
-func _on_next_level_end_turn():
+
+func _on_end_turn_ui_end_turn():
 	current_fortitude_loss += fortitude_loss_per_turn
 	GameManager.Current_Fortitude -= current_fortitude_loss
 	GameManager.Current_BAC += 1

@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ca0k0j0evguft"]
+[gd_scene load_steps=3 format=3 uid="uid://ca0k0j0evguft"]
 
 [ext_resource type="Script" path="res://Scripts/UI/next_level.gd" id="1_8sx43"]
+[ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="2_5d4dp"]
 
 [node name="NextLevel_UI" type="Control"]
 layout_mode = 3
@@ -8,9 +9,9 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 1000.0
-offset_top = 275.0
+offset_top = 200.0
 offset_right = -24.0
-offset_bottom = -245.0
+offset_bottom = -320.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8sx43")
@@ -22,6 +23,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("2_5d4dp")
+theme_override_font_sizes/font_size = 25
 text = "Next Level"
 
 [connection signal="pressed" from="NextLevel" to="." method="_on_next_level_pressed"]

@@ -21,6 +21,7 @@ func _ready():
 
 func _on_next_level_ui_next_level():
 	hand.delete_hand()
+	GameManager.Current_Money += 10
 	SceneManager.next_level()
 	GameManager.resetLevel()
 

@@ -39,9 +39,15 @@ offset_bottom = 85.0
 mouse_filter = 2
 
 [node name="Cards2Buy" type="VBoxContainer" parent="UI_Layer/CardsToBuy"]
-layout_mode = 0
-offset_right = 319.0
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
 offset_bottom = 497.0
+grow_horizontal = 2
+alignment = 1
 script = ExtResource("5_hy0tl")
 card_scene = ExtResource("6_5o0sq")
 

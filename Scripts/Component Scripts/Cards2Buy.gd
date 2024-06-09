@@ -10,7 +10,7 @@ func _ready() -> void:
 		
 
 func generate_hand():
-	var cards = GameManager.draw_card(4)
+	var cards = GameManager.draw_card(8)
 	for card in cards:	
 		var c = card_scene.instantiate()
 		c.ID = card["ID"]

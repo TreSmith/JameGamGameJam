@@ -6,7 +6,7 @@ func enter() -> void:
 		card_ui.reparent(ui_layer)
 		
 	card_ui.color.color = Color.NAVY_BLUE
-	card_ui.state.text = "DRAGGING"
+	#card_ui.state.text = "DRAGGING"
 
 func on_input(event: InputEvent) -> void:
 	var mouse_motion := event is InputEventMouseMotion

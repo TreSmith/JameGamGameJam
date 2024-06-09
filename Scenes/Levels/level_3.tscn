@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="5_33vk4"]
 [ext_resource type="PackedScene" uid="uid://7puib21iekv0" path="res://Scenes/UI/end_turn.tscn" id="6_ehfvw"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_phiha"]
+[ext_resource type="PackedScene" uid="uid://dqq71xq7yop4i" path="res://Scenes/Components/level_music.tscn" id="10_dluv0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1a146"]
 size = Vector2(1147, 449)
@@ -104,6 +105,8 @@ unique_name_in_owner = true
 
 [node name="PlayerBars" parent="UI_Layer" instance=ExtResource("6_phiha")]
 unique_name_in_owner = true
+
+[node name="Level_Music" parent="." instance=ExtResource("10_dluv0")]
 
 [connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]
 [connection signal="end_turn" from="UI_Layer/EndTurn_UI" to="." method="_on_end_turn_ui_end_turn"]

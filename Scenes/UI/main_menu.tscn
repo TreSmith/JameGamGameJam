@@ -1,59 +1,144 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx3ofyjcj7wxb"]
+[gd_scene load_steps=6 format=3 uid="uid://bx3ofyjcj7wxb"]
 
 [ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_lgh0y"]
 [ext_resource type="Texture2D" uid="uid://crucwie1hatfq" path="res://Assets/Backgrounds/main_menu.jpg" id="1_ohcko"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_vuw2v"]
 [ext_resource type="Texture2D" uid="uid://7gyfoov0dcey" path="res://Assets/TitleCard.png" id="2_5sgxa"]
+[ext_resource type="PackedScene" uid="uid://bylmjic26f5qj" path="res://Scenes/Components/shop_music.tscn" id="5_7f6ws"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
-anchors_preset = 0
-theme = ExtResource("1_lgh0y")
-script = ExtResource("1_vuw2v")
-
-[node name="Background" type="TextureRect" parent="."]
-layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -19.0
-offset_top = -74.0
-offset_right = 1177.0
-offset_bottom = 723.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_lgh0y")
+script = ExtResource("1_vuw2v")
+
+[node name="Shop_Music" parent="." instance=ExtResource("5_7f6ws")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Background" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_ohcko")
 expand_mode = 3
+stretch_mode = 6
 
-[node name="Initial" type="Node" parent="."]
+[node name="Initial" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="StartGame" type="Button" parent="Initial"]
+[node name="StartGame" type="Button" parent="CanvasLayer/Initial"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -85.0
-offset_top = 74.0
-offset_right = 86.0
-offset_bottom = 150.0
+offset_left = -91.0
+offset_top = 26.0
+offset_right = 92.0
+offset_bottom = 102.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lgh0y")
+theme_override_font_sizes/font_size = 30
 text = "START GAME"
 
-[node name="TitleCard" type="TextureRect" parent="Initial"]
+[node name="TitleCard" type="TextureRect" parent="CanvasLayer/Initial"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -365.5
-offset_top = -34.0
+offset_top = -94.0
 offset_right = 365.5
-offset_bottom = 34.0
+offset_bottom = -26.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_5sgxa")
 
-[connection signal="pressed" from="Initial/StartGame" to="." method="_on_button_pressed"]
+[node name="HowToPlay" type="Button" parent="CanvasLayer/Initial"]
+offset_left = 483.0
+offset_top = 450.0
+offset_right = 670.0
+offset_bottom = 526.0
+theme = ExtResource("1_lgh0y")
+theme_override_font_sizes/font_size = 30
+text = "HOW TO PLAY"
+
+[node name="HowToPlay" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="CanvasLayer/HowToPlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/HowToPlay/Panel"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -124.0
+offset_top = 37.0
+offset_right = -47.0
+offset_bottom = 118.0
+grow_horizontal = 0
+theme_override_font_sizes/font_size = 60
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/HowToPlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -392.0
+offset_top = -275.0
+offset_right = 398.0
+offset_bottom = 288.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "Drag cards to the cup to play them.
+
+Cards have a certain energy cost to play but certain cards will increase your energy after consuming the drink.
+
+To get through levels you must hit a certain notoriety level. This level is based on what your current BAC for the round is.
+
+Each turn you will lose fortitude, making it harder to keep from passing out before becoming notorious.
+
+Your BAC adds to the notoriety at the end of each turn, but make sure your fortitude doesn't meet your BAC before you become notorious otherwise you will pass out.
+
+After each level the shop will appear for you to purchase new drinks and meals to add to your ingredient deck. 
+
+Your only ability is to drink. But you're good at it. Party hard to keep getting invited to new and crazy parties."
+
+[connection signal="pressed" from="CanvasLayer/Initial/StartGame" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/Initial/HowToPlay" to="." method="_on_how_to_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/HowToPlay/Panel/ExitButton" to="." method="_on_exit_button_pressed"]

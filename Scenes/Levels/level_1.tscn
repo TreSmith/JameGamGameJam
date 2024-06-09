@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="6_wdlr8"]
 [ext_resource type="PackedScene" uid="uid://bq5hpwv6p0fnw" path="res://Scenes/UI/menu_bar.tscn" id="7_jhtla"]
 [ext_resource type="Texture2D" uid="uid://oxwymqc2mic5" path="res://Assets/redsolo.png" id="10_fmid2"]
+[ext_resource type="PackedScene" uid="uid://dqq71xq7yop4i" path="res://Scenes/Components/level_music.tscn" id="10_adfhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
 size = Vector2(1147, 449)
@@ -107,6 +108,8 @@ unique_name_in_owner = true
 unique_name_in_owner = true
 offset_top = 51.0
 offset_bottom = 101.0
+
+[node name="Level_Music" parent="." instance=ExtResource("10_adfhc")]
 
 [connection signal="end_turn" from="UI_Layer/EndTurn_UI" to="." method="_on_end_turn_ui_end_turn"]
 [connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]

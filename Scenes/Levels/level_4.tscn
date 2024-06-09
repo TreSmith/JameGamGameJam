@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cy3fgiw2rwbv2"]
+[gd_scene load_steps=12 format=3 uid="uid://cy3fgiw2rwbv2"]
 
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_0e4vm"]
 [ext_resource type="Texture2D" uid="uid://cs1kh062akifw" path="res://Assets/Backgrounds/Level4.jpg" id="1_lmou2"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="5_rjhhf"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_fxrfo"]
 [ext_resource type="PackedScene" uid="uid://7puib21iekv0" path="res://Scenes/UI/end_turn.tscn" id="6_sxmqh"]
+[ext_resource type="PackedScene" uid="uid://dqq71xq7yop4i" path="res://Scenes/Components/level_music.tscn" id="10_qfrdg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onq6v"]
 size = Vector2(1147, 449)
@@ -104,6 +105,8 @@ unique_name_in_owner = true
 
 [node name="PlayerBars" parent="UI_Layer" instance=ExtResource("6_fxrfo")]
 unique_name_in_owner = true
+
+[node name="Level_Music" parent="." instance=ExtResource("10_qfrdg")]
 
 [connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]
 [connection signal="end_turn" from="UI_Layer/EndTurn_UI" to="." method="_on_end_turn_ui_end_turn"]

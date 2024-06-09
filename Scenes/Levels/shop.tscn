@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyyk64t77bkhr"]
+[gd_scene load_steps=7 format=3 uid="uid://cyyk64t77bkhr"]
 
 [ext_resource type="Texture2D" uid="uid://caec80768mumv" path="res://Assets/Backgrounds/Shop.jpg" id="1_k8gka"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/shop.gd" id="1_wbwhc"]
 [ext_resource type="PackedScene" uid="uid://ca0k0j0evguft" path="res://Scenes/UI/next_level.tscn" id="3_1sknc"]
-[ext_resource type="PackedScene" uid="uid://dj2x6fjkbkkm0" path="res://Scenes/UI/menu_bar.tscn" id="3_7bf6k"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/menu_bar.tscn" id="3_7bf6k"]
+[ext_resource type="Script" path="res://Scripts/Component Scripts/Cards2Buy.gd" id="5_hy0tl"]
+[ext_resource type="PackedScene" uid="uid://68ym2vy6l8vu" path="res://Scenes/Components/shopcard.tscn" id="6_5o0sq"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_wbwhc")
@@ -27,15 +29,26 @@ offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+mouse_filter = 1
 
 [node name="CardsToBuy" type="Panel" parent="UI_Layer"]
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 33.0
-offset_top = -238.0
-offset_right = 355.0
-offset_bottom = 262.0
-grow_vertical = 2
+offset_left = 35.0
+offset_top = 85.0
+offset_right = 354.0
+offset_bottom = 85.0
+mouse_filter = 2
+
+[node name="Cards2Buy" type="VBoxContainer" parent="UI_Layer/CardsToBuy"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_right = 125.0
+offset_bottom = 497.0
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("5_hy0tl")
+card_scene = ExtResource("6_5o0sq")
 
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

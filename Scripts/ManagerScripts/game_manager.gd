@@ -121,4 +121,6 @@ func add_card_to_deck(id: int):
 	for card in Card_Data_List:
 		if(id == card["ID"]):
 			Current_Deck.append(card)
+			Remaining_Deck.append(card)
+			Remaining_Deck.shuffle()
 			break

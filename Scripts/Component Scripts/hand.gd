@@ -22,7 +22,7 @@ func generate_hand(handsize):
 		c.cards = card["Card"]
 		c.energy = card["Energy"]
 		c.retain = card["Retain"]
-		c.Start.text = c.cardname
+		#c.state.text = c.cardname
 		add_child(c)
 		c.reparent_requested.connect(_on_card_ui_reparent_requested)
 	GameManager.Handsize = GameManager.DEFAULT_HANDSIZE

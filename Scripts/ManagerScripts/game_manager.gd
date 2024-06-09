@@ -96,10 +96,19 @@ func build_starting_deck():
 func reshuffle_discard_into_deck():
 	Remaining_Deck = Current_Deck.duplicate(true)
 	Remaining_Deck.shuffle()
+	print(Remaining_Deck)
 	Discard_Pile = []
 
-func draw_card():
-	return Remaining_Deck.pop_front()
+func draw_card(amount : int = 1):
+	var cardsToDraw = []
+	for i in range(amount):	
+		if Remaining_Deck.size() > 0:
+			print(Remaining_Deck.size())
+			cardsToDraw.append(Remaining_Deck.pop_front())
+		else:
+			print("Reshuffle")
+			reshuffle_discard_into_deck()
+	return cardsToDraw
 
 func discard_card(id: int):
 	Discard_Pile.append(get_card_by_id(id))

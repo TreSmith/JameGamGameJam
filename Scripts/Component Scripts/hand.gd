@@ -11,9 +11,9 @@ func _on_card_ui_reparent_requested(child: Card) -> void:
 	child.reparent(self)
 
 func generate_hand(handsize):
-	for i in handsize:
+	var cards = GameManager.draw_card(GameManager.Handsize)
+	for card in cards:
 		var c = card_scene.instantiate()
-		var card = GameManager.draw_card()
 		c.ID = card["ID"]
 		c.BAC = card["BAC"]
 		c.cost = card["Cost"]

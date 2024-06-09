@@ -10,6 +10,7 @@ var current_notoriety = 0
 @onready var notoriety = %Notoriety
 @onready var hand = %Hand
 @onready var menu_bar = $UI_Layer/menu_bar
+@onready var energy_ui = %Energy_UI
 
 func _ready():
 	notoriety.fillLabels(requiredNotoriety)
@@ -31,7 +32,11 @@ func _on_end_turn_ui_end_turn():
 	player_bars.update_fort()
 	hand.delete_hand()
 	hand.generate_hand(GameManager.Handsize)
+	energy_ui.update_label()
 	isGameOver()
+
+func _on_hand_change_energy():
+	energy_ui.update_label()
 
 func isGameOver():
 	if GameManager.Current_Fortitude <= GameManager.Current_BAC:
@@ -39,3 +44,5 @@ func isGameOver():
 			SceneManager.lose_game()
 		else:
 			SceneManager.next_level()
+
+

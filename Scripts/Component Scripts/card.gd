@@ -2,7 +2,7 @@ class_name Card
 extends Control
 
 signal reparent_requested(which_card_ui: Card)
-
+signal energy_changed()
 
 @onready var color: ColorRect = $Color
 @onready var state: Label = $State
@@ -57,6 +57,7 @@ func _on_card_released_state_cardplayed():
 		GameManager.Current_BAC += BAC
 		GameManager.Handsize += cards
 		GameManager.Current_Energy -= cost
+		energy_changed.emit()
 		GameManager.Energy += energy
 		GameManager.Retain += retain
 		var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)

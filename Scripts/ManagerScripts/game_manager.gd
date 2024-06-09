@@ -79,7 +79,9 @@ func get_card_by_id(id: int):
 
 func get_random_card_from_pool():
 	var rng = RandomNumberGenerator.new()
-	var maxRange = Card_Data_List.size()
+	var total_cards = Card_Data_List.size() - 1
+	var index = rng.randi_range(0, total_cards)
+	return Card_Data_List[index]
 
 func build_starting_deck():
 	Current_Deck = []

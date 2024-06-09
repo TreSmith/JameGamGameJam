@@ -44,6 +44,7 @@ stretch_mode = 6
 [node name="NextLevel_UI" parent="UI_Layer" instance=ExtResource("3_v7kdf")]
 
 [node name="Energy_UI" parent="UI_Layer" instance=ExtResource("6_wdlr8")]
+unique_name_in_owner = true
 
 [node name="Hand" parent="UI_Layer" instance=ExtResource("4_p4c6k")]
 unique_name_in_owner = true
@@ -58,3 +59,4 @@ offset_bottom = 101.0
 
 [connection signal="end_turn" from="UI_Layer/EndTurn_UI" to="." method="_on_end_turn_ui_end_turn"]
 [connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]
+[connection signal="change_energy" from="UI_Layer/Hand" to="." method="_on_hand_change_energy"]

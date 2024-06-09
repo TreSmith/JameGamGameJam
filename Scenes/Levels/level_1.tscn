@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://3m8fja3p3ixi"]
+[gd_scene load_steps=19 format=3 uid="uid://3m8fja3p3ixi"]
 
 [ext_resource type="Texture2D" uid="uid://cyni463s4m3hk" path="res://Assets/Backgrounds/Level1.jpg" id="1_j2ew7"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_n3ubw"]
@@ -9,8 +9,8 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="6_hwsjq"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="6_wdlr8"]
 [ext_resource type="PackedScene" uid="uid://bq5hpwv6p0fnw" path="res://Scenes/UI/menu_bar.tscn" id="7_jhtla"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/level_music.tscn" id="10_adfhc"]
 [ext_resource type="Texture2D" uid="uid://oxwymqc2mic5" path="res://Assets/redsolo.png" id="10_fmid2"]
-[ext_resource type="PackedScene" uid="uid://dqq71xq7yop4i" path="res://Scenes/Components/level_music.tscn" id="10_adfhc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
 size = Vector2(1147, 449)

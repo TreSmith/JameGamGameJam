@@ -105,10 +105,10 @@ anchor_left = 0.004
 anchor_top = 0.206
 anchor_right = 0.004
 anchor_bottom = 0.206
-offset_left = 0.0839999
-offset_top = 0.165993
-offset_right = 229.084
-offset_bottom = 269.166
+offset_left = 9.084
+offset_top = -31.834
+offset_right = 230.084
+offset_bottom = 267.166
 label_settings = SubResource("LabelSettings_xq70l")
 
 [node name="CloseDeck" type="Button" parent="ColorRect"]

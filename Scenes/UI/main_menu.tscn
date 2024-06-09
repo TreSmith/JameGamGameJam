@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crucwie1hatfq" path="res://Assets/Backgrounds/main_menu.jpg" id="1_ohcko"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_vuw2v"]
 [ext_resource type="Texture2D" uid="uid://7gyfoov0dcey" path="res://Assets/TitleCard.png" id="2_5sgxa"]
-[ext_resource type="PackedScene" uid="uid://bylmjic26f5qj" path="res://Scenes/Components/shop_music.tscn" id="5_7f6ws"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/shop_music.tscn" id="5_7f6ws"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -73,6 +73,7 @@ grow_vertical = 2
 texture = ExtResource("2_5sgxa")
 
 [node name="HowToPlay" type="Button" parent="CanvasLayer/Initial"]
+layout_mode = 0
 offset_left = 483.0
 offset_top = 450.0
 offset_right = 670.0

@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bq5hpwv6p0fnw" path="res://Scenes/UI/menu_bar.tscn" id="3_7bf6k"]
 [ext_resource type="Script" path="res://Scripts/Component Scripts/Cards2Buy.gd" id="5_hy0tl"]
 [ext_resource type="PackedScene" uid="uid://caxqpuk27txsc" path="res://Scenes/Components/shopcard.tscn" id="6_5o0sq"]
-[ext_resource type="PackedScene" uid="uid://bylmjic26f5qj" path="res://Scenes/Components/shop_music.tscn" id="7_y50i5"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/shop_music.tscn" id="7_y50i5"]
 
 [node name="shop" type="Node2D"]
 script = ExtResource("1_wbwhc")

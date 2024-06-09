@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://b260heag1djpo"]
+[gd_scene load_steps=19 format=3 uid="uid://b260heag1djpo"]
 
 [ext_resource type="Texture2D" uid="uid://cac7gk12y0coj" path="res://Assets/Backgrounds/Level5.jpg" id="1_7tv0g"]
 [ext_resource type="Script" path="res://Scripts/level_script.gd" id="1_eglit"]
@@ -8,9 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://d7x6pm1w0kk1" path="res://Scenes/Components/hand.tscn" id="4_p7vef"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="5_xnvwa"]
 [ext_resource type="PackedScene" uid="uid://7puib21iekv0" path="res://Scenes/UI/end_turn.tscn" id="6_ivktx"]
-[ext_resource type="PackedScene" uid="uid://borgwftef6nl5" path="res://Scenes/UI/player_bars.tscn" id="6_q3pkv"]
-[ext_resource type="PackedScene" uid="uid://c14ljwaxio8v4" path="res://Scenes/UI/energy_ui.tscn" id="8_teykg"]
-[ext_resource type="PackedScene" uid="uid://dqq71xq7yop4i" path="res://Scenes/Components/level_music.tscn" id="10_2u4ph"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="6_q3pkv"]
+[ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="8_teykg"]
+[ext_resource type="PackedScene" path="res://Scenes/Components/level_music.tscn" id="10_2u4ph"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtltk"]
 size = Vector2(1147, 449)
@@ -60,6 +60,7 @@ animations = [{
 
 [node name="level_5" type="Node2D"]
 script = ExtResource("1_eglit")
+requiredNotoriety = 350
 
 [node name="CardDropArea" type="Area2D" parent="."]
 collision_layer = 2

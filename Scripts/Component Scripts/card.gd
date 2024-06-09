@@ -14,7 +14,7 @@ signal reparent_requested(which_card_ui: Card)
 
 
 @export var BAC = 0
-@export var cost = 0
+@export var cost = 3
 @export var fort = 0
 @export var cards = 0
 @export var energy = 0

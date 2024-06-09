@@ -33,4 +33,4 @@ func delete_hand():
 		GameManager.Retain = GameManager.Retain - 1
 	else:
 		for c in get_children():
-				c.discardcard()
+			c.discardcard()

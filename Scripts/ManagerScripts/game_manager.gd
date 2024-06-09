@@ -28,7 +28,7 @@ var Card_Data_List
 
 func _ready():
 	read_json_card_data()
-	resetToDefaults()
+	reset_data_to_start()
 	build_starting_deck()
 
 func resetToDefaults():
@@ -37,11 +37,15 @@ func resetToDefaults():
 	Current_Energy = BASE_ENERGY
 	Current_Notoriety = 0
 	Handsize = DEFAULT_HANDSIZE
+
+func reset_data_to_start():
+	resetToDefaults()
 	Current_Money = STARTING_MONEY
 	Current_Deck = []
 	Discard_Pile = []
+	Remaining_Deck = []
 	build_starting_deck()
-	
+
 func resetLevel():
 	Current_Fortitude = STARTING_FORTITUDE
 	Current_BAC = STARTING_BAC

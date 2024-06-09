@@ -23,13 +23,10 @@ stretch_mode = 6
 [node name="menu_bar" parent="UI_Layer" instance=ExtResource("3_7bf6k")]
 
 [node name="NextLevel" parent="UI_Layer" instance=ExtResource("3_1sknc")]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
-grow_horizontal = 2
-grow_vertical = 2
 
 [node name="CardsToBuy" type="Panel" parent="UI_Layer"]
 anchors_preset = 4

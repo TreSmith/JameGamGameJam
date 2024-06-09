@@ -3,6 +3,8 @@ extends Control
 @onready var money = %Money
 @onready var level = %Level
 @onready var view_deck_text = $menu_bar_area/ViewDeck
+@onready var decklist = $ColorRect/Decklist
+@onready var color_rect = $ColorRect
 
 signal view_deck
 
@@ -19,4 +21,10 @@ func update_labels():
 
 
 func _on_view_deck_pressed():
+	color_rect.visible = true
+	decklist.text = GameManager.print_deck()
 	view_deck.emit()
+
+
+func _on_close_deck_pressed():
+	color_rect.visible = false

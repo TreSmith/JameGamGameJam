@@ -126,3 +126,14 @@ func add_card_to_deck(id: int):
 			Remaining_Deck.append(card)
 			Remaining_Deck.shuffle()
 			break
+
+func print_deck():
+	var cardcount = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+	var output = ""
+	for card in Current_Deck:
+		cardcount[card.ID] +=  1
+	for card in Card_Data_List:
+		if cardcount[card.ID] != 0:
+			output = output + str(cardcount[card.ID]) + "x - " + str(card["Name"] + "\n")
+	return output
+		

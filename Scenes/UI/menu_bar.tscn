@@ -1,7 +1,15 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq5hpwv6p0fnw"]
+[gd_scene load_steps=5 format=3 uid="uid://bq5hpwv6p0fnw"]
 
 [ext_resource type="Theme" uid="uid://cfoqgywdsmi8h" path="res://Themes/main_theme.tres" id="1_frcfb"]
 [ext_resource type="Script" path="res://Scenes/UI/menu_bar.gd" id="2_1hrqc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sp1fs"]
+font_size = 30
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_xq70l"]
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="menu_bar" type="Control"]
 layout_mode = 3
@@ -71,4 +79,56 @@ theme = ExtResource("1_frcfb")
 theme_override_font_sizes/font_size = 20
 text = "View Deck (10)"
 
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 471.0
+offset_top = 102.0
+offset_right = 700.0
+offset_bottom = 441.0
+mouse_filter = 1
+
+[node name="Title" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 230.0
+offset_bottom = 39.0
+text = "Deck List"
+label_settings = SubResource("LabelSettings_sp1fs")
+horizontal_alignment = 1
+
+[node name="Decklist" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.206
+anchor_right = 0.004
+anchor_bottom = 0.206
+offset_left = 0.0839999
+offset_top = 0.165993
+offset_right = 229.084
+offset_bottom = 269.166
+label_settings = SubResource("LabelSettings_xq70l")
+
+[node name="CloseDeck" type="Button" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -39.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 35.0
+grow_horizontal = 0
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/CloseDeck"]
+layout_mode = 0
+offset_top = -3.0
+offset_right = 35.0
+offset_bottom = 31.0
+mouse_filter = 1
+color = Color(1, 0, 0, 1)
+
 [connection signal="pressed" from="menu_bar_area/ViewDeck" to="." method="_on_view_deck_pressed"]
+[connection signal="pressed" from="ColorRect/CloseDeck" to="." method="_on_close_deck_pressed"]

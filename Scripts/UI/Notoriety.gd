@@ -6,7 +6,6 @@ extends Panel
 var required_notoriety = 0
 
 func fillLabels(requirements):
-	print("Requirements: " + str(requirements))
 	required_notoriety = requirements
 	notoriety_bar.value = 0
 	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)

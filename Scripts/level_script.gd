@@ -48,7 +48,7 @@ func is_game_over():
 		if GameManager.Current_Notoriety < requiredNotoriety:
 			SceneManager.lose_game()
 		else:
-			SceneManager.next_level()
+			_on_next_level_ui_next_level()
 
 func is_requirements_passed():
 	if GameManager.Current_Notoriety >= requiredNotoriety:

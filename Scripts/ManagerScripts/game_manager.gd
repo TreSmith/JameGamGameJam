@@ -6,7 +6,7 @@ const BASE_ENERGY : int = 3
 const DEFAULT_HANDSIZE : int = 5
 const DEFAULT_ENERGY : int = 3
 const DEFAULT_RETAIN : int = 0
-
+const STARTING_DECK_SIZE : int = 10
 
 var Current_Fortitude = STARTING_FORTITUDE
 var Current_BAC = STARTING_BAC
@@ -20,6 +20,8 @@ const STARTING_MONEY : int = 10
 
 var Current_Money
 var Current_Deck
+var Dicard_Pile
+var Remaining_Deck
 
 var card_json_data_path = "res://Data/card_data.json"
 var Card_Data_List
@@ -27,6 +29,7 @@ var Card_Data_List
 func _ready():
 	resetToDefaults()
 	read_json_card_data()
+	build_starting_deck()
 
 func resetToDefaults():
 	Current_Fortitude = STARTING_FORTITUDE
@@ -68,7 +71,18 @@ func get_card_by_id(id: int):
 	return card_data
 
 func get_random_card():
-	pass
+	var rng = RandomNumberGenerator.new()
 
 func build_starting_deck():
-	pass
+	Current_Deck = []
+	for card in Card_Data_List:
+		if(Current_Deck.size() == STARTING_DECK_SIZE):
+			break
+		elif(card["Name"] == "Beer"):
+			for i in range(7):
+				Current_Deck.append(card)
+		elif(card["Name"] == "Wine"):
+			for i in range(2):
+				Current_Deck.append(card)
+		elif(card["Name"] == "Coffee"):
+			Current_Deck.append(card)

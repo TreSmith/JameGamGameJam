@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cwvokrs86ax4x"]
+[gd_scene load_steps=5 format=3 uid="uid://cwvokrs86ax4x"]
 
 [ext_resource type="Script" path="res://Scripts/UI/Notoriety.gd" id="1_5vr55"]
+[ext_resource type="Theme" path="res://main_theme.tres" id="1_e0akq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pnh4"]
 bg_color = Color(0.286275, 0.0941176, 0.12549, 0.482353)
@@ -16,6 +17,7 @@ offset_top = 50.0
 offset_right = -72.0
 offset_bottom = 100.0
 grow_horizontal = 2
+theme = ExtResource("1_e0akq")
 script = ExtResource("1_5vr55")
 
 [node name="NotorietyBar" type="ProgressBar" parent="."]

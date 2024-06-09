@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx3ofyjcj7wxb"]
+[gd_scene load_steps=5 format=3 uid="uid://bx3ofyjcj7wxb"]
 
+[ext_resource type="Theme" path="res://main_theme.tres" id="1_lgh0y"]
 [ext_resource type="Texture2D" uid="uid://crucwie1hatfq" path="res://Assets/Backgrounds/main_menu.jpg" id="1_ohcko"]
 [ext_resource type="Script" path="res://Scripts/UI/main_menu.gd" id="1_vuw2v"]
 [ext_resource type="Texture2D" uid="uid://7gyfoov0dcey" path="res://Assets/TitleCard.png" id="2_5sgxa"]
@@ -7,6 +8,7 @@
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+theme = ExtResource("1_lgh0y")
 script = ExtResource("1_vuw2v")
 
 [node name="Background" type="TextureRect" parent="."]
@@ -37,6 +39,7 @@ offset_right = 86.0
 offset_bottom = 150.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_lgh0y")
 text = "START GAME"
 
 [node name="TitleCard" type="TextureRect" parent="Initial"]

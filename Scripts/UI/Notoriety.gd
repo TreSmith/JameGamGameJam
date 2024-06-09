@@ -11,7 +11,7 @@ func fillLabels(requirements):
 	notoriety_bar.value = 0
 	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)
 
-func update_notoriety_ui(notoriety):
+func update_notoriety_ui():
 	notoriety_bar.value = GameManager.Current_Notoriety
-	required_notoriety - GameManager.Current_Notoriety
-	notoriety_label.text = "Required Notoriety: " + str(required_notoriety)
+	var notoriety_left = required_notoriety - GameManager.Current_Notoriety
+	notoriety_label.text = "Required Notoriety: " + str(notoriety_left)

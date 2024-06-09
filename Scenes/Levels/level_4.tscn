@@ -50,4 +50,5 @@ unique_name_in_owner = true
 [node name="PlayerBars" parent="UI_Layer" instance=ExtResource("6_fxrfo")]
 unique_name_in_owner = true
 
+[connection signal="end_turn" from="UI_Layer/NextLevel" to="." method="_on_next_level_end_turn"]
 [connection signal="next_level" from="UI_Layer/NextLevel" to="." method="_on_next_level_next_level"]

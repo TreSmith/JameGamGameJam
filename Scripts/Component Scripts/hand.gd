@@ -13,6 +13,15 @@ func _on_card_ui_reparent_requested(child: Card) -> void:
 func generate_hand(handsize):
 	for i in handsize:
 		var c = card_scene.instantiate()
+		var card = GameManager.draw()
+		c.BAC = card["BAC"]
+		c.cost = card["Cost"]
+		c.fort = card["FORT"]
+		c.cardname = card["Name"]
+		c.cards = card["Card"]
+		c.energy = card["Energy"]
+		c.retain = card["Retain"]
+		c.Start.text = c.cardname
 		add_child(c)
 		c.reparent_requested.connect(_on_card_ui_reparent_requested)
 	GameManager.Handsize = GameManager.DEFAULT_HANDSIZE

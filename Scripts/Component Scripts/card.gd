@@ -12,9 +12,9 @@ signal reparent_requested(which_card_ui: Card)
 @onready var card_released_state = %CardReleasedState
 
 
-
+var cardname = ""
 @export var BAC = 0
-@export var cost = 0
+@export var cost = 3
 @export var fort = 0
 @export var cards = 0
 @export var energy = 0
@@ -45,6 +45,7 @@ func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
 
 func discardcard():
+	GameManager.discard(cardname)
 	queue_free()
 	
 func _on_card_released_state_cardplayed():

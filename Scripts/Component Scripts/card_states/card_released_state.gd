@@ -6,7 +6,7 @@ var played: bool
 
 func enter() -> void:
 	card_ui.color.color = Color.DARK_VIOLET
-	card_ui.state.text = "RELEASED"
+	#card_ui.state.text = "RELEASED"
 	
 	played = false
 	
@@ -18,6 +18,7 @@ func enter() -> void:
 		
 func on_input(_event: InputEvent) -> void:
 	if not played:
+		transition_requested.emit(self, CardState.State.BASE)
 		return
 	await get_tree().create_timer(0.3).timeout
 	transition_requested.emit(self, CardState.State.BASE)

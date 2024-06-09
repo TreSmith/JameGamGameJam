@@ -12,6 +12,7 @@ var current_scene_type = SceneType.Menu
 
 var game_scene = "res://Scenes/Main.tscn"
 var title_scene = "res://Scenes/UI/main_menu.tscn"
+var game_over_scene = "res://Scenes/UI/game_over.tscn"
 
 func restart():
 	current_level = 0
@@ -31,3 +32,7 @@ func next_level():
 		get_tree().change_scene_to_file(game_scene)
 	else:
 		restart()
+
+func lose_game():
+	GameManager.resetToDefaults()
+	get_tree().change_scene_to_file(game_over_scene)

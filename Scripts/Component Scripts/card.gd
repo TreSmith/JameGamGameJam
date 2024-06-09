@@ -9,6 +9,15 @@ signal reparent_requested(which_card_ui: Card)
 @onready var drop_point_detector = $DropPointDetector
 @onready var targets: Array[Node] = []
 
+
+@export var BAC = 0
+@export var cost = 0
+@export var fort = 0
+@export var card = 0
+@export var energy = 0
+
+var cardstats = [BAC, cost, fort, card, energy]
+
 func _ready() -> void:
 	card_state_machine.init(self)
 	
@@ -29,6 +38,15 @@ func _on_drop_point_detector_area_entered(area: Area2D) -> void:
 	if not targets.has(area):
 		targets.append(area)
 
-
 func _on_drop_point_detector_area_exited(area: Area2D) -> void:
 	targets.erase(area)
+
+func playcard():
+	queue_free()
+	
+func _on_card_released_state_cardplayed():
+	var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
+	tw.tween_property(self, "scale", scale * 3, 0.3)
+	tw.tween_property(self, "modulate:a", 0.0, 0.3)
+	await tw.finished
+	queue_free()

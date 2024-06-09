@@ -1,6 +1,7 @@
 
 extends CardState
 
+signal cardplayed
 var played: bool
 
 
@@ -12,6 +13,8 @@ func enter() -> void:
 	
 	if not card_ui.targets.is_empty():
 		played = true
+		cardplayed.emit()
+		
 		
 func on_input(_event: InputEvent) -> void:
 	if played:

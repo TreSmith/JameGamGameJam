@@ -1,5 +1,7 @@
 extends HBoxContainer
 
+@export var card_scene : PackedScene
+
 func _ready() -> void:
 	for child in get_children():
 		var card_ui := child as Card
@@ -7,3 +9,12 @@ func _ready() -> void:
 		
 func _on_card_ui_reparent_requested(child: Card) -> void:
 	child.reparent(self)
+
+func generate_hand(handsize):
+	for i in handsize:
+		var c = card_scene.instantiate()
+		add_child(c)
+		
+func delete_hand():
+	for c in get_children():
+			c.playcard()

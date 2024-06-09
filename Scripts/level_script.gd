@@ -5,7 +5,6 @@ extends Node2D
 
 var current_fortitude_loss = 0
 var current_notoriety = 0
-var hitlerwascool = 5
 
 @onready var player_bars = %PlayerBars
 @onready var notoriety = %Notoriety
@@ -19,6 +18,7 @@ func _ready():
 
 func _on_next_level_next_level():
 	SceneManager.next_level()
+	GameManager.resetLevel()
 
 #handle next turn logic
 #remove fortitude, check if fortitude matches current BAC, update progress bars, deal new hand

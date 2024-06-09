@@ -5,6 +5,7 @@ const STARTING_BAC : int = 0
 const BASE_ENERGY : int = 3
 const DEFAULT_HANDSIZE : int = 5
 const DEFAULT_ENERGY : int = 3
+const DEFAULT_RETAIN : int = 0
 
 
 var Current_Fortitude = STARTING_FORTITUDE
@@ -13,6 +14,7 @@ var Current_Energy = BASE_ENERGY
 var Current_Notoriety = 0
 var Handsize = DEFAULT_HANDSIZE
 var Energy = DEFAULT_ENERGY
+var Retain = DEFAULT_ENERGY
 const STARTING_MONEY : int = 10
 
 
@@ -33,6 +35,13 @@ func resetToDefaults():
 	Current_Notoriety = 0
 	Handsize = DEFAULT_HANDSIZE
 	Current_Money = STARTING_MONEY
+	
+func resetLevel():
+	Current_Fortitude = STARTING_FORTITUDE
+	Current_BAC = STARTING_BAC
+	Current_Energy = BASE_ENERGY
+	Handsize = DEFAULT_HANDSIZE
+
 
 func read_json_card_data():
 	var json_parser = JSON.new()

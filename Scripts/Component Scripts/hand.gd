@@ -20,5 +20,8 @@ func generate_hand(handsize):
 	GameManager.Energy = GameManager.DEFAULT_ENERGY
 		
 func delete_hand():
-	for c in get_children():
-			c.discardcard()
+	if (GameManager.Retain > 0):
+		GameManager.Retain = GameManager.Retain - 1
+	else:
+		for c in get_children():
+				c.discardcard()

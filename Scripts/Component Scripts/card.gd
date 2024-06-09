@@ -13,11 +13,12 @@ signal reparent_requested(which_card_ui: Card)
 
 
 
-@export var BAC = 5
-@export var cost = 1
-@export var fort = 5
-@export var cards = 1
+@export var BAC = 0
+@export var cost = 0
+@export var fort = 0
+@export var cards = 0
 @export var energy = 0
+@export var retain = 1
 
 
 func _ready() -> void:
@@ -53,6 +54,7 @@ func _on_card_released_state_cardplayed():
 		GameManager.Handsize += cards
 		GameManager.Current_Energy -= cost
 		GameManager.Energy += energy
+		GameManager.Retain += retain
 		var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
 		tw.tween_property(self, "scale", get_parent().get_parent().scale * 3, 0.3)
 		tw.tween_property(self, "modulate:a", 0.0, 0.3)

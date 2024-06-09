@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" path="res://Scenes/UI/player_bars.tscn" id="5_csc8m"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/notoriety.tscn" id="6_hwsjq"]
 [ext_resource type="PackedScene" path="res://Scenes/UI/energy_ui.tscn" id="6_wdlr8"]
-[ext_resource type="PackedScene" path="res://Scenes/UI/menu_bar.tscn" id="7_jhtla"]
+[ext_resource type="PackedScene" uid="uid://bq5hpwv6p0fnw" path="res://Scenes/UI/menu_bar.tscn" id="7_jhtla"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b5ype"]
 size = Vector2(1147, 449)

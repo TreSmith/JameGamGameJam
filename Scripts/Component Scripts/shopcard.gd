@@ -39,10 +39,10 @@ func _process(delta):
 func _on_button_pressed():
 	if (GameManager.Current_Money >= 10):
 		GameManager.Current_Money -= 10
-		money_update.emit()
 		GameManager.add_card_to_deck(ID)
 		var tw = create_tween().set_parallel().set_trans(Tween.TRANS_QUAD)
 		tw.tween_property(self, "scale", get_parent().get_parent().scale * 3, 0.3)
 		tw.tween_property(self, "modulate:a", 0.0, 0.3)
 		await tw.finished
+		money_update.emit()
 		queue_free()

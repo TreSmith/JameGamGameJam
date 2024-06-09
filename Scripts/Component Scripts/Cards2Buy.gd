@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-
+signal update_money
 
 @export var card_scene : PackedScene
 
@@ -20,5 +20,8 @@ func generate_shop():
 		c.cards = card["Card"]
 		c.energy = card["Energy"]
 		c.retain = card["Retain"]
+		c.money_update.connect(_on_shopcard_money_update)
 		add_child(c)
 
+func _on_shopcard_money_update():
+	update_money.emit()

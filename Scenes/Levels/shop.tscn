@@ -62,3 +62,5 @@ script = ExtResource("5_hy0tl")
 card_scene = ExtResource("6_5o0sq")
 
 [connection signal="next_level" from="UI_Layer/NextLevel_UI" to="." method="_on_next_level_ui_next_level"]
+[connection signal="update_money" from="UI_Layer/CardsToBuy/Cards2Buy" to="." method="_on_cards_2_buy_update_money"]
+[connection signal="update_money" from="UI_Layer/CardsToBuy/Cards2Buy2" to="." method="_on_cards_2_buy_update_money"]

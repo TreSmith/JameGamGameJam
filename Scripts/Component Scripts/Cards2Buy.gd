@@ -9,7 +9,7 @@ func _ready() -> void:
 
 func generate_shop():
 	var card
-	for i in 5:	
+	for i in 4:	
 		card = GameManager.get_random_card_from_pool()
 		var c = card_scene.instantiate()
 		c.ID = card["ID"]

@@ -38,9 +38,24 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -125.0
-offset_right = 125.0
-offset_bottom = 497.0
+offset_left = -127.5
+offset_top = -30.0
+offset_right = -27.5
+offset_bottom = 467.0
+grow_horizontal = 2
+alignment = 1
+script = ExtResource("5_hy0tl")
+card_scene = ExtResource("6_5o0sq")
+
+[node name="Cards2Buy2" type="VBoxContainer" parent="UI_Layer/CardsToBuy"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 22.5
+offset_top = -33.0
+offset_right = 122.5
+offset_bottom = 464.0
 grow_horizontal = 2
 alignment = 1
 script = ExtResource("5_hy0tl")

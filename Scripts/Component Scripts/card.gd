@@ -52,6 +52,7 @@ func discardcard():
 	
 func _on_card_released_state_cardplayed():
 	if ((GameManager.Current_Energy - cost) >= 0):
+		GameManager.discard_card(ID)
 		GameManager.Current_Fortitude += fort
 		GameManager.Current_BAC += BAC
 		GameManager.Handsize += cards
